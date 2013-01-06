@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>翻一下</title>
+		<style>
+			#test{
+				background: #f00;
+				width:100px;
+				height:100px;
+			}
+			#test.test{
+				background:#00f;
+			}
+		</style>
+		<script type="text/javascript" src="../js/jquery-1.8.2.js"></script>
+		<script type="text/javascript" src="../plugins/rotate3Di-master/rotate3Di.js"></script>
+		<script>
+			$(document).ready(function(){
+				$('#test').rotate3Di(90, 300, {complete:function(){
+						$(this).addClass('test').html("123").rotate3Di(-90);
+						$(this).rotate3Di(0, 500);
+					}
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="test">
+			1234556
+		</div>
+	</body>
+</html>
