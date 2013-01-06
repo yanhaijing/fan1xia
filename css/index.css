@@ -1,0 +1,13 @@
+#canvas{
+	width:780px;
+	margin:auto;
+	background:#3125af
+}
+#canvas img{
+	background:url(../images/background.gif);
+	border-radius: 5px;
+	width:65px
+}
+#canvas img.front{
+	background:#e2dcf8;
+}
