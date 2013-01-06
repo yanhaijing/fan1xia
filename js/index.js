@@ -75,15 +75,8 @@
 				$this.rotate3Di(0, 150, {complete:function(){callback();}});
 			}});
 		},
-		
-		/**
-		 * 添加图象到画布
-		 * addImagesDom 
-		 */
 	};
 	
-	$(function(){
-		var fan1xia = new Fan1xia();
-		fan1xia.init();
-	});
+	window.fan1xia = window.fan1xia || {};
+	window.fan1xia.Index = window.fan1xia.Index || Index;
 }(jQuery, window));
