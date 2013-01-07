@@ -33,20 +33,6 @@
 		init:function(){
 			this.bindClickEvent();//初始化点击事件
 		},
-		/**
-		 * 绑定单击事件
-		 * @event bindClickEvent 
-		 */
-		bindClickEvent:function(){
-			var 
-				$table = $('#canvas table'),
-				that = this;
-			
-			//绑定图片的点击事件	
-			$table.delegate('img', 'click', function(e){
-				that.unclockRotate180($(this), function(){});
-			});
-		},
 		
 		/**
 		 * 顺时针旋转180度元素 
