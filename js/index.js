@@ -32,35 +32,8 @@
 		 */
 		init:function(){
 			this.bindClickEvent();//初始化点击事件
-		},
+		}
 		
-		/**
-		 * 顺时针旋转180度元素 
-		 * @method clockRotate180
-		 * @param {$object} $obj 旋转的元素
-		 * @param {function} callback 回调函数
-		 */
-		clockRotate180:function($obj, callback){
-			$obj.rotate3Di(90, 150, {complete:function(){
-				var $this = $(this);
-				$this.addClass('front').attr('src', $this.attr('rel')).rotate3Di(-90);
-				$this.rotate3Di(0, 150, {complete:function(){callback();}});
-			}});
-		},
-		
-		/**
-		 * 逆时针时针旋转180度元素 
-		 * @method unclockRotate180
-		 * @param {$object} $obj 旋转的元素
-		 * @param {function} callback 回调函数
-		 */
-		unclockRotate180:function($obj, callback){
-			$obj.rotate3Di(-90, 150, {complete:function(){
-				var $this = $(this);
-				$this.removeClass('front').attr('src', './images/Shamrock.bmp').rotate3Di(90);
-				$this.rotate3Di(0, 150, {complete:function(){callback();}});
-			}});
-		},
 	};
 	
 	window.fan1xia = window.fan1xia || {};

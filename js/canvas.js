@@ -8,11 +8,32 @@
 */
 (function($, window){
 	'use strict';
+	/**
+	* 图片类类
+	* @class Canvas
+	* @constructor
+	* @extends window.fan1xia.Canvas.prototype
+	* @namespace window.fan1xia
+	*/
 	var Canvas = function(){
 		
 	};
 	
+	/**
+	* Canvas构造函数的原型对象
+	*
+	* @class Canvas.prototype
+	*/
 	Canvas.prototype = {
+		
+		/**
+		 * 重置画布
+		 * @method reset 
+		 */
+		reset:function(){
+			$('#canvas table').empty();
+		},
+		
 		/**
 		 * 绑定单击事件
 		 * @event bindClickEvent 
@@ -26,6 +47,34 @@
 			$table.delegate('img', 'click', function(e){
 				that.unclockRotate180($(this), function(){});
 			});
+		},
+		
+		/**
+		 * 顺时针旋转180度元素 
+		 * @method clockRotate180
+		 * @param {$object} $obj 旋转的元素
+		 * @param {function} callback 回调函数
+		 */
+		clockRotate180:function($obj, callback){
+			$obj.rotate3Di(90, 150, {complete:function(){
+				var $this = $(this);
+				$this.addClass('front').attr('src', $this.attr('rel')).rotate3Di(-90);
+				$this.rotate3Di(0, 150, {complete:function(){callback();}});
+			}});
+		},
+		
+		/**
+		 * 逆时针时针旋转180度元素 
+		 * @method unclockRotate180
+		 * @param {$object} $obj 旋转的元素
+		 * @param {function} callback 回调函数
+		 */
+		unclockRotate180:function($obj, callback){
+			$obj.rotate3Di(-90, 150, {complete:function(){
+				var $this = $(this);
+				$this.removeClass('front').attr('src', './images/Shamrock.bmp').rotate3Di(90);
+				$this.rotate3Di(0, 150, {complete:function(){callback();}});
+			}});
 		},
 	};
 }(jQuery, window));

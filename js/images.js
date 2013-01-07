@@ -19,6 +19,12 @@
 	var Images = function(){
 		
 	};
+	
+	/**
+	* Images构造函数的原型对象
+	*
+	* @class Images.prototype
+	*/
 	Images.prototype = {
 		images:['Alien 1.bmp',
 				'Alien 2.bmp',
@@ -108,7 +114,18 @@
 			}
 			
 			return imgsDom;
-		}
+		},
+		
+		/**
+		 * 随即生成函数
+		 * @method randowmImages
+		 * @param {Number} num 生成的数量
+		 * @return {Array} images 生成的数组
+		 */
+		randomImages:function(){
+			
+			
+		},
 	};
 	
 	window.fan1xia = window.fan1xia || {};
