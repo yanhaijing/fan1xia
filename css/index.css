@@ -1,7 +1,26 @@
-#canvas{
-	width:780px;
+html,body{
+	width:100%;
+	height:100%;
+	background:#1396ce;
+	background:-webkit-gradient(linear,0% 0%, 0% 100%, from(#0037ac), to(#0037ac), color-stop(0.3, #5096f6), color-stop(0.5,#1396ce), color-stop(0.7, #5096f6))
+}
+
+#wrap{
+	width:1000px;
+	height:100%;
 	margin:auto;
-	background:#3125af
+	background: -webkit-gradient(linear,0% 0%, 0% 100%, from(#9d5e70), to(#cd9191));
+	text-align: center;
+}
+#canvas{
+	background:#3125af;
+	display:inline-block;
+	padding:20px;
+	-moz-box-shadow:0px 0px 20px #4a48eb; 
+	-webkit-box-shadow:0px 0px 20px #4a48eb; 
+	box-shadow:0px 0px 20px #4a48eb;
+	border-radius: 5px;
+	margin:10px;
 }
 #canvas img{
 	background:url(../images/background.gif);
@@ -10,4 +29,9 @@
 }
 #canvas img.front{
 	background:#e2dcf8;
+}
+#canvas table td{
+	padding:1px 2px;
+	-moz-box-shadow:0px 0px 20px #3D30E2; -webkit-box-shadow:0px 0px 20px #3D30E2; box-shadow:0px 0px 20px #3D30E2;
+	cursor: pointer
 }
