@@ -1,3 +1,7 @@
+@CHARSET "UTF-8";
+/**
+ * 	index 页面的css
+ */
 html,body{
 	width:100%;
 	height:100%;
@@ -5,22 +9,70 @@ html,body{
 	background:-webkit-gradient(linear,0% 0%, 0% 100%, from(#0037ac), to(#0037ac), color-stop(0.3, #5096f6), color-stop(0.5,#1396ce), color-stop(0.7, #5096f6))
 }
 
+
+/**
+ * 	外边的包裹
+ * ================================================
+ */
 #wrap{
-	width:1000px;
+	width:1020px;
 	height:100%;
 	margin:auto;
 	background: -webkit-gradient(linear,0% 0%, 0% 100%, from(#9d5e70), to(#cd9191));
-	text-align: center;
 }
+/**
+ * 	#time-wrap
+ * ===============================================
+ */
+#time-wrap{
+	float:left;
+	width:250px
+}
+/**
+ * 	时间控件的css
+ * -----------------------------
+ */
+#time{
+	width:auto;
+	margin: 100px 20px 0 20px;
+	background:-webkit-gradient(linear,0% 0%, 0% 100%, from(#a9adb0), to(#a7abae), color-stop(0.5, #cbd0d3));
+	border:#e2d1ec 3px solid;
+	border-radius:5px;
+	padding:20px 0 0;
+	-moz-box-shadow:0px 0px 20px #e2d1ec; 
+	-webkit-box-shadow:0px 0px 20px #e2d1ec; 
+	box-shadow:0px 0px 20px #e2d1ec;
+	opacity:0.8
+}
+#time:hover{
+	opacity:1
+}
+/**
+ * 	result css
+ */
+#result{
+	margin: 100px auto 0;
+	text-align:center;
+	opacity:0.6
+}
+#result:hover{
+	opacity:0.9
+}
+#result img{
+}
+/**
+ * 	画布元素
+ * ==============================================
+ */
 #canvas{
 	background:#3125af;
-	display:inline-block;
 	padding:20px;
 	-moz-box-shadow:0px 0px 20px #4a48eb; 
 	-webkit-box-shadow:0px 0px 20px #4a48eb; 
 	box-shadow:0px 0px 20px #4a48eb;
 	border-radius: 5px;
-	margin:10px;
+	margin:10px 0;
+	float:left;
 }
 #canvas img{
 	background:url(../images/background.gif);
@@ -34,4 +86,61 @@ html,body{
 	padding:1px 2px;
 	-moz-box-shadow:0px 0px 20px #3D30E2; -webkit-box-shadow:0px 0px 20px #3D30E2; box-shadow:0px 0px 20px #3D30E2;
 	cursor: pointer
+}
+/**
+ * 	wall-warp css
+ */
+#wall-warp{
+	float:left;
+	margin-left:20px
+}
+#score-panel{
+	height:200px;
+	width:135px;
+	background:#495647;
+	border:5px #c9b6cc solid;
+	margin-top:50px;
+	-moz-box-shadow:0px 0px 20px #e2d1ec; 
+	-webkit-box-shadow:0px 0px 20px #e2d1ec; 
+	box-shadow:0px 0px 20px #e2d1ec;
+	border-radius:5px;
+	color:#bdc3bd;
+	font-weight:bold;
+	font-size:24px;
+	opacity:0.8
+}
+#score-panel:hover{
+	opacity:1
+}
+#score-panel table{
+	margin:auto;
+	line-height:2em
+}
+#score-panel table tr{
+	margin:10px 0
+}
+#help{
+	margin-top:50px;
+}
+#help img{
+	display:block;
+	opacity:0.6
+}
+#help img:hover{
+	opacity:0.9
+}
+#home{
+	background:url(../images/home-btn.png);
+	border:0;
+	height:65px;
+	width:130px;
+	margin-top:30px;
+	cursor:pointer;
+	opacity:0.6
+}
+#home:hover{
+	opacity:0.9
+}
+#wall-warp img{
+	width:120px
 }

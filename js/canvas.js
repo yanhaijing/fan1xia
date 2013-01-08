@@ -8,6 +8,8 @@
 */
 (function($, window){
 	'use strict';
+	var Canvas = function(){},
+		Timer = function(){};
 	/**
 	* 图片类类
 	* @class Canvas
@@ -15,7 +17,7 @@
 	* @extends window.fan1xia.Canvas.prototype
 	* @namespace window.fan1xia
 	*/
-	var Canvas = function(){
+	Canvas = function(){
 		
 	};
 	
@@ -25,7 +27,13 @@
 	* @class Canvas.prototype
 	*/
 	Canvas.prototype = {
-		
+		/**
+		 * 初始化
+		 * @method init 
+		 */
+		init:function(){
+			this.bindClickEvent();
+		},
 		/**
 		 * 重置画布
 		 * @method reset 
@@ -77,4 +85,62 @@
 			}});
 		},
 	};
+	
+	window.fan1xia = window.fan1xia || {};
+	window.fan1xia.Canvas = window.fan1xia.Canvas || Canvas;
+	
+	/**
+	* 图片类类
+	* @class Timer
+	* @constructor
+	* @extends window.fan1xia.Timer.prototype
+	* @namespace window.fan1xia
+	*/
+	Timer = function(){};
+	
+	/**
+	* Timer构造函数的原型对象
+	*
+	* @class Timer.prototype
+	*/
+	Timer.prototype = {
+		/**
+		 * 初始化
+		 * @method init 
+		 */
+		init:function(){
+			this.setTimer((new Date()).getTime() + 1000*1000);
+		},
+		
+		/**
+		 * 复原计时器为零
+		 * @method reset 
+		 */
+		reset:function(){
+			$('#time').countdown();
+		},
+		
+		/**
+		 * 
+		 * @method setTimer
+		 * @param {Number} stamp 时间戳
+		 * @param {Function} callback 回调函数
+		 */
+		setTimer:function(stamp, callback){
+			$('#time').countdown({
+				timestamp	: stamp,
+				callback:callback
+			});
+		}
+	};
+	
+	window.fan1xia = window.fan1xia || {};
+	window.fan1xia.Timer = window.fan1xia.Timer || Timer;
+	
+	$(function(){
+		var timer = new Timer();
+		timer.init();
+		var canvas = new Canvas();
+		canvas.init();
+	});
 }(jQuery, window));

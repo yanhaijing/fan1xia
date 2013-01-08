@@ -16,12 +16,17 @@
 	// Creating the plugin
 	$.fn.countdown = function(prop){
 		
-		var options = $.extend({
-			callback	: function(){},
-			timestamp	: 0,
-		},prop);
+		var left, 
+			d, 
+			h, 
+			m, 
+			s, 
+			positions,
+			options = $.extend({
+				callback	: function(){},
+				timestamp	: 0
+			},prop);
 		
-		var left, d, h, m, s, positions;
 
 		// Initialize the plugin
 		init(this, options);
@@ -61,7 +66,7 @@
 			if(left > 0){
 				setTimeout(tick, 1000);
 			}
-		})();
+		}());
 		
 		// This function updates two digit positions at once
 		function updateDuo(minor,major,value){

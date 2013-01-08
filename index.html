@@ -5,9 +5,11 @@
 		<title>颜海镜翻一下1.0beta版</title>
 		<link href="./css/reset.css" rel="stylesheet" />
 		<link href="./css/index.css" rel="stylesheet"/>
+		<link href="./plugins/assets/countdown/jquery.countdown.css" rel="stylesheet"/>
 		
 		<script type="text/javascript" src="./js/jquery-1.8.2.js"></script>
 		<script type="text/javascript" src="./plugins/rotate3Di-master/rotate3Di.js"></script>
+		<script type="text/javascript" src="./plugins/assets/countdown/jquery.countdown.js"></script>
 	</head>
 	<body>
 		<div id="wrap">
@@ -15,7 +17,7 @@
 				<div id="time">
 				</div><!-- end of #time-->
 				<div id="result">
-					
+					<img src="./images/store.png" />
 				</div><!--end of #result-->
 			</aside><!--end of #time-wrap-->
 			<div id="canvas">
@@ -103,13 +105,24 @@
 					
 				</table>
 			</div><!-- end of #canvas -->
-			<aside id="score-panel">
-				
-			</aside><!-- end of #score-panel-->
-			<aside id="help">
-				
-			</aside><!--end of #help-->
+			<div id="wall-warp">
+				<aside id="score-panel">
+					<table>
+						<tbody>
+							<tr><td>总共</td><td>10对</td></tr>
+							<tr><td>还剩</td><td>5对</td></tr>
+							<tr><td>点击</td><td>10次</td></tr>
+							<tr><td>失败</td><td>5次</td></tr>
+						</tbody>
+					</table>
+				</aside><!-- end of #score-panel-->
+				<aside id="help">
+					<img src="./images/help.png" />
+					<button id="home" title="回到首页"></button>
+				</aside><!--end of #help-->
+			</div><!--end of #wall-warp-->
 		</div><!-- end of #wrap -->
 	</body>
 	<script type="text/javascript" src="./js/index.js"></script>
+	<script type="text/javascript" src="./js/canvas.js"></script>
 </html>
