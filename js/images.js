@@ -157,6 +157,49 @@
 				return index;//返回index的值
 			};
 			return results;
+		},
+		
+		/**
+		 * 扩展images数组
+		 * @method expendImages
+		 * @param {Number} grad 梯度
+		 * @return {Array} results 返回的结果数组
+		 */
+		expendImages:function(images, grad){
+			var i = 0,
+			results = [],
+			len = images.length,
+			j = 0;
+			for(i; i < len; i = i + 1){
+				for(j = 0; j < grad; j = j + 1){
+					results.push(images[i]);
+				}
+			}
+			
+			return results;
+		},
+		
+		/*
+		 * 初始化数组dom对象
+		 * @method initImages
+		 * @param {num} count 总数
+		 * @param {num} grad 有多少个元素相同
+		 * @return {Array} results 生成随机的数组
+		 */
+		initImages:function(count, grad){
+			var results = [],
+				imgSrcs = [],
+				imageObjs = [],
+				imageDoms = [],
+				num = count / grad,
+				expendDoms = [];
+			
+			//初始化src对象	
+			imgSrcs = this.initImagesSrc();
+			//载入image对象
+			imageObjs = this.loadImages(imgSrcs);
+			//创建doms对象
+			imageDoms = this.createImagesDom(imageObjs);
 		}
 	};
 	

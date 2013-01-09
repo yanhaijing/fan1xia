@@ -41,7 +41,8 @@
 		 * @param {Number} level游戏的级别
 		 */
 		refresh:function(level){
-			var images = new window.fan1xia.Images();
+			var images = new window.fan1xia.Images(),
+			imgDoms = [];
 			//清空元素
 			this.reset();
 			//加载imagesdom
@@ -50,6 +51,14 @@
 			
 		},
 		
+		/**
+		 * 初始化画布元素
+		 * @method initCanvas 
+		 * @param {Array} imgDoms 
+		 */
+		initCanvas:function(imgDoms){
+			var len = imgDoms.lenght;
+		},
 		/**
 		 * 重置画布
 		 * @method reset 
