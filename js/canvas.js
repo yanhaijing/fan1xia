@@ -34,6 +34,22 @@
 		init:function(){
 			this.bindClickEvent();
 		},
+		
+		/**
+		 * 刷新画布元素
+		 * @method refresh 
+		 * @param {Number} level游戏的级别
+		 */
+		refresh:function(level){
+			var images = new window.fan1xia.Images();
+			//清空元素
+			this.reset();
+			//加载imagesdom
+			images.randomImages((level*level)/2);
+			//构造html添加到画布元素
+			
+		},
+		
 		/**
 		 * 重置画布
 		 * @method reset 

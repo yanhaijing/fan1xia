@@ -120,12 +120,44 @@
 		 * 随即生成函数
 		 * @method randowmImages
 		 * @param {Number} num 生成的数量
+		 * @param {Array} imagesDom 图片dom数组
 		 * @return {Array} images 生成的数组
 		 */
-		randomImages:function(){
+		randomImages:function(num, imagesDom){
+			var i = 0,
+			randomNext = function(){},
+			random = Math.random,
+			results = [],
+			imgSrcs = [],
+			imageObjs = [],
+			imageDoms = [];
 			
+			//判断是否有imageDom参数没有自己创建
+			if(imagesDom === undefined){
+				imgSrcs = this.initImagesSrc();
+				imageObjs = this.loadImages(imgSrcs);
+				imageDoms = this.createImagesDom(imageObjs);
+				
+				imagesDom = imageDoms;
+			}
 			
-		},
+			for(i; i < num; i = i + 1){
+				results[i] = imagesDom[randomNext()];
+			}
+			
+			//生成下一个随机数
+			randomNext = function(){
+				var len=imagesDom.length,
+				index = 0;
+				while(imagesDom[index] === null){
+					index=Math.floor(Math.random()*len);
+				}
+				
+				imagesDom[index] = null;
+				return index;//返回index的值
+			};
+			return results;
+		}
 	};
 	
 	window.fan1xia = window.fan1xia || {};
