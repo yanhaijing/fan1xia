@@ -9,16 +9,62 @@ html,body{
 	background:-webkit-gradient(linear,0% 0%, 0% 100%, from(#0037ac), to(#0037ac), color-stop(0.3, #5096f6), color-stop(0.5,#1396ce), color-stop(0.7, #5096f6))
 }
 
-
+/**
+ * 	失败元素对象
+ * ==============================================
+ */
+#failed{
+	display:none;
+}
+/**
+ * 	胜利元素css
+ * =============================================
+ */
+#success{
+	display:none
+}
 /**
  * 	外边的包裹
  * ================================================
  */
-#wrap{
+#wrap,#failed,#success,#home{
+	display:none;
 	width:1020px;
 	height:100%;
 	margin:auto;
 	background: -webkit-gradient(linear,0% 0%, 0% 100%, from(#9d5e70), to(#cd9191));
+}
+/**
+ * 	home对象css
+ * =================================
+ */
+#home{
+	display:block;
+	background:-webkit-gradient(linear,0% 0%, 0% 100%, from(#180002), to(#180002), color-stop(0.5, #aa5709));
+	color:#fff;
+	font-size:40px;
+	font-weight:bold;
+	text-align:center
+}
+#home ul{
+	margin:100px 50px
+}
+#home li{
+	float:left;
+	margin:30px 50px
+}
+#home button{
+	background:#c0eb78;
+	width:80px;
+	height:80px;
+	border-radius:10px;
+	color:#eeeaeb;
+	font-size:36px;
+	font-weight:bolder;
+	-moz-box-shadow:0px 0px 20px #e2d1ec; 
+	-webkit-box-shadow:0px 0px 20px #e2d1ec; 
+	box-shadow:0px 0px 20px #e2d1ec;
+	cursor:pointer
 }
 /**
  * 	#time-wrap
@@ -94,6 +140,7 @@ html,body{
 }
 /**
  * 	wall-warp css
+ * ==================================================
  */
 #wall-warp{
 	float:left;
@@ -134,7 +181,7 @@ html,body{
 #help img:hover{
 	opacity:0.9
 }
-#home{
+#go-home{
 	background:url(../images/home-btn.png);
 	border:0;
 	height:65px;
@@ -143,7 +190,7 @@ html,body{
 	cursor:pointer;
 	opacity:0.6
 }
-#home:hover{
+#go-home:hover{
 	opacity:0.9
 }
 #wall-warp img{

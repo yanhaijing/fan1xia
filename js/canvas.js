@@ -33,9 +33,9 @@
 		 * 初始化
 		 * @method init 
 		 */
-		init:function(){			
+		init:function(level, grad){			
 			this.bindClickEvent();
-			this.refresh(8, 4);
+			this.refresh(level, grad);
 		},
 		
 		/**
@@ -48,7 +48,8 @@
 			var images = new window.fan1xia.Images(),
 			imgDoms = [],
 			$table = $('#canvas table'),
-			score = new window.fan1xia.Score();
+			score = new window.fan1xia.Score(),
+			timer = new window.fan1xia.Timer();
 			//收起 散开
 			$table.yanVhSlideCenter(0, function(){
 				$table.yanVhSlideSide('slow');
@@ -62,6 +63,9 @@
 			this.createHtml(imgDoms, level);
 			//更新分数面板
 			score.reset(level);
+			
+			//更新时钟
+			timer.setTimer((new Date()).getTime() + (level*10)*1000 + 10*1000);
 		},
 		
 		/**
@@ -444,9 +448,9 @@
 	window.fan1xia = window.fan1xia || {};
 	window.fan1xia.Score = window.fan1xia.Score || Score;
 	$(function(){
-		var timer = new Timer();
+		/*var timer = new Timer();
 		timer.init();
 		var canvas = new Canvas();
-		canvas.init();
+		canvas.init();*/
 	});
 }(jQuery, window));
