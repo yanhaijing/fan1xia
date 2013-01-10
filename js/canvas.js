@@ -33,6 +33,7 @@
 		 */
 		init:function(){
 			this.bindClickEvent();
+			this.refresh(6);
 		},
 		
 		/**
@@ -46,9 +47,37 @@
 			//清空元素
 			this.reset();
 			//加载imagesdom
-			images.randomImages((level*level)/2);
+			imgDoms = images.initImages(level*level, 2);
 			//构造html添加到画布元素
-			
+			this.createHtml(imgDoms, level);
+		},
+		
+		/**
+		 * 构造html
+		 * @method createHtml
+		 * @param {Array} imgDoms 图象dom数组元素
+		 * @param {Number} level 级别 
+		 */
+		createHtml:function(imgDoms, level){
+			var 
+				_$ = $,
+				$tbody = $('#canvas table tbody'),
+				len = imgDoms.length,
+				i = 0,
+				j = 0,
+				$tr = [],
+				$td = [];
+				
+			for(i; i<level; i++){
+				$tr[i] = _$('<tr></tr>');
+				for(j=0; j<level; j++){
+					$td[i*level + j] = _$('<td></td>');
+					$td[i*level + j].append(imgDoms[i*level + j]);
+					$tr[i].append($td[i*level + j]);
+				}
+				
+				$tbody.append($tr[i]);
+			}	
 		},
 		
 		/**
@@ -64,7 +93,7 @@
 		 * @method reset 
 		 */
 		reset:function(){
-			$('#canvas table').empty();
+			$('#canvas table tbody').empty();
 		},
 		
 		/**
@@ -108,7 +137,7 @@
 				$this.removeClass('front').attr('src', './images/Shamrock.bmp').rotate3Di(90);
 				$this.rotate3Di(0, 150, {complete:function(){callback();}});
 			}});
-		},
+		}
 	};
 	
 	window.fan1xia = window.fan1xia || {};

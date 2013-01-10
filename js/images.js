@@ -110,7 +110,7 @@
 				_$ = $;
 				
 			for(i; i < len; i = i + 1){
-				imgsDom[i] = _$('<img src="' + images[i].src + '">');
+				imgsDom[i] = _$('<img src="./images/Shamrock.bmp" rel="' + images[i].src + '">');
 			}
 			
 			return imgsDom;
@@ -130,7 +130,26 @@
 			results = [],
 			imgSrcs = [],
 			imageObjs = [],
-			imageDoms = [];
+			imageDoms = [],
+			temps = [],
+			len = imagesDom.length;
+			
+			//深拷贝
+			for(i=0; i<len; i++){
+				temps[i] = imagesDom[i];
+			}
+			
+			//生成下一个随机数
+			randomNext = function(){
+				var len=temps.length,
+				index = 0;
+				while(temps[index] === null){
+					index=Math.floor(Math.random()*len);
+				}
+				
+				temps[index] = null;
+				return index;//返回index的值
+			};
 			
 			//判断是否有imageDom参数没有自己创建
 			if(imagesDom === undefined){
@@ -141,21 +160,10 @@
 				imagesDom = imageDoms;
 			}
 			
-			for(i; i < num; i = i + 1){
+			for(i = 0; i < num; i = i + 1){
 				results[i] = imagesDom[randomNext()];
 			}
 			
-			//生成下一个随机数
-			randomNext = function(){
-				var len=imagesDom.length,
-				index = 0;
-				while(imagesDom[index] === null){
-					index=Math.floor(Math.random()*len);
-				}
-				
-				imagesDom[index] = null;
-				return index;//返回index的值
-			};
 			return results;
 		},
 		
@@ -192,7 +200,8 @@
 				imageObjs = [],
 				imageDoms = [],
 				num = count / grad,
-				expendDoms = [];
+				expendDoms = [],
+				randomDoms = [];
 			
 			//初始化src对象	
 			imgSrcs = this.initImagesSrc();
@@ -200,6 +209,17 @@
 			imageObjs = this.loadImages(imgSrcs);
 			//创建doms对象
 			imageDoms = this.createImagesDom(imageObjs);
+			
+			//随机取图象
+			randomDoms = this.randomImages(num, imageDoms);
+			//扩展图象
+			
+			expendDoms = this.expendImages(randomDoms, grad);
+			
+			//随机排列图象
+			expendDoms = this.randomImages(expendDoms.length, expendDoms);
+			
+			return expendDoms;
 		}
 	};
 	
