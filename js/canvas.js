@@ -33,7 +33,7 @@
 		 */
 		init:function(){
 			this.bindClickEvent();
-			this.refresh(4, 4);
+			this.refresh(8, 4);
 		},
 		
 		/**
@@ -104,11 +104,50 @@
 		bindClickEvent:function(){
 			var 
 				$table = $('#canvas table'),
-				that = this;
+				that = this,
+				$preImg = null,
+				sound = new window.yan.Sound();
 			
 			//绑定图片的点击事件	
 			$table.delegate('img', 'click', function(e){
-				that.unclockRotate180($(this), function(){});
+				var 
+					$this = $(this),
+					preSrc = $preImg !==null && $preImg.attr('rel'),
+					currentSrc = $this.attr('rel'),
+					success = function(){},
+					failed = function(){},
+					first = function(){};
+				
+				success = function(){
+					//更新当前图象
+					$preImg = null;
+					sound.play('./media/spread.wav');
+				};	
+				failed = function(){
+					//翻到不相同图象
+					that.unclockRotate180($preImg, function(){});
+					that.unclockRotate180($this, function(){});
+						
+					//更新当前图象
+					$preImg = null;
+					sound.play('./media/Click.wav');
+				};
+				first = function(){
+					//第一次开始翻
+					$preImg = $this;
+				};
+				that.clockRotate180($(this), function(){
+					//翻到相同图象
+					if(preSrc === currentSrc){
+						//消失
+						success();
+					}else if($preImg !==null){
+						failed();
+					}else{
+						first();
+					}
+				});	
+				
 			});
 		},
 		
@@ -133,7 +172,7 @@
 		 * @param {function} callback 回调函数
 		 */
 		unclockRotate180:function($obj, callback){
-			$obj.rotate3Di(-90, 150, {complete:function(){
+			$obj.delay(200).rotate3Di(-90, 150, {complete:function(){
 				var $this = $(this);
 				$this.removeClass('front').attr('src', './images/Shamrock.bmp').rotate3Di(90);
 				$this.rotate3Di(0, 150, {complete:function(){callback();}});

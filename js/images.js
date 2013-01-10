@@ -52,7 +52,6 @@
 				'Penguin.bmp',
 				'Rabbit.bmp',
 				'Rose.bmp',
-				'Shamrock.bmp',
 				'Sun.bmp',
 				'Women.bmp'
 			],
