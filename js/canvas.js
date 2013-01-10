@@ -33,7 +33,7 @@
 		 * 初始化
 		 * @method init 
 		 */
-		init:function(){
+		init:function(){			
 			this.bindClickEvent();
 			this.refresh(8, 4);
 		},
@@ -47,7 +47,8 @@
 		refresh:function(level, grad){
 			var images = new window.fan1xia.Images(),
 			imgDoms = [],
-			$table = $('#canvas table');
+			$table = $('#canvas table'),
+			score = new window.fan1xia.Score();
 			//收起 散开
 			$table.yanVhSlideCenter(0, function(){
 				$table.yanVhSlideSide('slow');
@@ -59,6 +60,8 @@
 			imgDoms = images.initImages(level*level, grad);
 			//构造html添加到画布元素
 			this.createHtml(imgDoms, level);
+			//更新分数面板
+			score.reset(level);
 		},
 		
 		/**
@@ -116,6 +119,7 @@
 				$preImg = null,
 				sound = new window.yan.Sound(),
 				store = new window.fan1xia.Store(),
+				score = new window.fan1xia.Score(),
 				success = function(){},
 				failed = function(){},
 				first = function(){};
@@ -128,6 +132,8 @@
 				//更新当前图象
 				$preImg = null;
 				store.pull();
+				//更新已经消除次数
+				score.decreaseRemainNumber();
 			};	
 			
 			//失败的事件
@@ -139,6 +145,9 @@
 				//更新当前图象
 				$preImg = null;
 				sound.play('./media/Click.wav');
+				
+				//更新失败次数
+				score.addErrorCount();
 			};	
 			
 			//初次点击事件
@@ -154,6 +163,9 @@
 					preSrc = $preImg !==null && $preImg.attr('rel'),
 					currentSrc = $this.attr('rel');
 
+				//更新点击次数
+				score.addClickCount();
+				
 				that.clockRotate180($(this), function(){
 					//翻到相同图象
 					if(preSrc === currentSrc){
@@ -320,7 +332,13 @@
 		 */
 		reset:function(level){
 			//设置总队数
-			this.serTotalNumber(level*levle/2);
+			this.setTotalNumber(level*level/2);
+			//设置剩余队数
+			this.setRemainNumber(level*level/2);
+			//设置点击次数
+			this.setClickCount();
+			//设置错误次数
+			this.setErrorCount();
 		},
 		
 		/**
@@ -330,8 +348,93 @@
 		 */
 		setTotalNumber:function(total){
 			var
-				$tds = ('#score-panel td');
-			$tds[1].html(total + '对');
+				$tds = $('#score-panel td');
+			$tds.eq(1).html(total + '对');
+		},
+		
+		/**
+		 * 设置还剩对少对
+		 * @method setRemainNumber
+		 * @param {Number|undefined} remain 剩余队数
+		 */
+		setRemainNumber:function(remain){
+			var
+				$tds = $('#score-panel td');
+			$tds.eq(3).html(remain + '对');
+		},
+		/**
+		 * 获取剩余对数
+		 * @method getRemainNumber
+		 * @return {Number} count 当前还剩余队数 
+		 */
+		getRemainNumber:function(){
+			var
+				$tds = $('#score-panel td');
+			return parseInt($tds.eq(3).html(), 10);
+		},
+		/**
+		 * 剩余队数自减 
+		 * @method decreaseRemainNumber
+		 * 
+		 */
+		decreaseRemainNumber:function(){
+			var count = this.getRemainNumber();
+			
+			this.setRemainNumber(count - 1);
+		},
+		/**
+		 * 设置还剩对少对
+		 * @method setClickCount
+		 * @param {Number|undefined} count 剩余队数
+		 */
+		setClickCount:function(count){
+			count = count || 0;
+			var
+				$tds = $('#score-panel td');
+			$tds.eq(5).html(count + '次');
+		},
+		/**
+		 * 获取点击次数
+		 * @method getClickCount
+		 * @return {Number} count 点击次数 
+		 */
+		getClickCount:function(){
+			var
+				$tds = $('#score-panel td');
+			return parseInt($tds.eq(5).html(), 10);
+		},
+		/**
+		 *  增加点击次数
+		 * @method addClickCount
+		 */
+		addClickCount:function(){
+			this.setClickCount(this.getClickCount() + 1);
+		},
+		/**
+		 * 设置失败次数
+		 * @method setErrorCount
+		 * @param {Number|undefined} count 剩余队数
+		 */
+		setErrorCount:function(count){
+			count = count || 0;
+			var
+				$tds = $('#score-panel td');
+			$tds.eq(7).html(count + '次');
+		},
+		/**
+		 * 获取错误次数
+		 * @method getErrorCount
+		 * @return {Number} count 错误次数 
+		 */
+		getErrorCount:function(){
+			return parseInt($('#score-panel td').eq(7).html(), 10);
+		},
+		
+		/**
+		 * 
+		 */
+		addErrorCount:function(){
+			this.setErrorCount(this.getErrorCount() + 1);
 		}
 	};
 	
