@@ -73,19 +73,24 @@ html,body{
 	border-radius: 5px;
 	margin:10px 0;
 	float:left;
+	width:552px;
+	height:552px;
 }
 #canvas img{
 	background:url(../images/background.gif);
 	border-radius: 5px;
-	width:65px
+	width:65px;
+	cursor: pointer
 }
 #canvas img.front{
 	background:#e2dcf8;
 }
+#canvas img[rel='']{
+	cursor:auto
+}
 #canvas table td{
 	padding:1px 2px;
 	-moz-box-shadow:0px 0px 20px #3D30E2; -webkit-box-shadow:0px 0px 20px #3D30E2; box-shadow:0px 0px 20px #3D30E2;
-	cursor: pointer
 }
 /**
  * 	wall-warp css

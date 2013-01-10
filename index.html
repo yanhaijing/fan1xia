@@ -6,29 +6,35 @@
 		<link href="./css/reset.css" rel="stylesheet" />
 		<link href="./css/index.css" rel="stylesheet"/>
 		<link href="./plugins/assets/countdown/jquery.countdown.css" rel="stylesheet"/>
+		<link href="./plugins/animate-custom/animate-custom.css" rel="stylesheet"/>
 		
 		<script type="text/javascript" src="./js/jquery-1.8.2.js"></script>
 		<script type="text/javascript" src="./plugins/rotate3Di-master/rotate3Di.js"></script>
 		<script type="text/javascript" src="./plugins/assets/countdown/jquery.countdown.js"></script>
 		<script type="text/javascript" src="./plugins/yanSound/sound.js"></script>
+		<script type="text/javascript" src="./plugins/animate-custom/animate-custom.js"></script>
+		
+		<script type="text/javascript" src="./plugins/jquery.yan.ui/jquery.yan.ui.3.0.js"></script>
 	</head>
 	<body>
 		<div id="wrap">
 			<aside id="time-wrap">
-				<div id="time">
+				<div id="time" class="animated my-animate" for="pulse">
 				</div><!-- end of #time-->
-				<div id="result">
+				<div id="result" class="animated my-animate" for="tada">
 					<img src="./images/store.png" />
 				</div><!--end of #result-->
 			</aside><!--end of #time-wrap-->
 			<div id="canvas">
-				<table>
-					<tbody>
-					</tbody>					
-				</table>
+				<div>
+					<table>
+						<tbody>
+						</tbody>					
+					</table>
+				</div>
 			</div><!-- end of #canvas -->
 			<div id="wall-warp">
-				<aside id="score-panel">
+				<aside id="score-panel" class="animated my-animate" for="flash">
 					<table>
 						<tbody>
 							<tr><td>总共</td><td>10对</td></tr>
@@ -39,8 +45,8 @@
 					</table>
 				</aside><!-- end of #score-panel-->
 				<aside id="help">
-					<img src="./images/help.png" />
-					<button id="home" title="回到首页"></button>
+					<img src="./images/help.png" class="animated my-animate" for="bounceIn"/>
+					<button id="home" title="回到首页" class="animated my-animate" for="wiggle"></button>
 				</aside><!--end of #help-->
 			</div><!--end of #wall-warp-->
 		</div><!-- end of #wrap -->

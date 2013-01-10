@@ -9,7 +9,9 @@
 (function($, window){
 	'use strict';
 	var Canvas = function(){},
-		Timer = function(){};
+		Timer = function(){},
+		Store = function(){},
+		Score = function(){};
 	/**
 	* 图片类类
 	* @class Canvas
@@ -44,7 +46,13 @@
 		 */
 		refresh:function(level, grad){
 			var images = new window.fan1xia.Images(),
-			imgDoms = [];
+			imgDoms = [],
+			$table = $('#canvas table');
+			//收起 散开
+			$table.yanVhSlideCenter(0, function(){
+				$table.yanVhSlideSide('slow');
+			});
+			
 			//清空元素
 			this.reset();
 			//加载imagesdom
@@ -106,45 +114,55 @@
 				$table = $('#canvas table'),
 				that = this,
 				$preImg = null,
-				sound = new window.yan.Sound();
+				sound = new window.yan.Sound(),
+				store = new window.fan1xia.Store(),
+				success = function(){},
+				failed = function(){},
+				first = function(){};
+			
+			//成功的事件
+			success = function($currentImg){
+				sound.play('./media/spread.wav');
+				$preImg.attr({src:'./images/background.gif', rel:''});
+				$currentImg.attr({src:'./images/background.gif', rel:''});
+				//更新当前图象
+				$preImg = null;
+				store.pull();
+			};	
+			
+			//失败的事件
+			failed = function($currentImg){
+				//翻到不相同图象
+				that.unclockRotate180($preImg, function(){});
+				that.unclockRotate180($currentImg, function(){});
+					
+				//更新当前图象
+				$preImg = null;
+				sound.play('./media/Click.wav');
+			};	
+			
+			//初次点击事件
+			first = function($currentImg){
+				//第一次开始翻
+				$preImg = $currentImg;
+			};
 			
 			//绑定图片的点击事件	
-			$table.delegate('img', 'click', function(e){
+			$table.delegate('img[rel!=""]', 'click', function(e){
 				var 
 					$this = $(this),
 					preSrc = $preImg !==null && $preImg.attr('rel'),
-					currentSrc = $this.attr('rel'),
-					success = function(){},
-					failed = function(){},
-					first = function(){};
-				
-				success = function(){
-					//更新当前图象
-					$preImg = null;
-					sound.play('./media/spread.wav');
-				};	
-				failed = function(){
-					//翻到不相同图象
-					that.unclockRotate180($preImg, function(){});
-					that.unclockRotate180($this, function(){});
-						
-					//更新当前图象
-					$preImg = null;
-					sound.play('./media/Click.wav');
-				};
-				first = function(){
-					//第一次开始翻
-					$preImg = $this;
-				};
+					currentSrc = $this.attr('rel');
+
 				that.clockRotate180($(this), function(){
 					//翻到相同图象
 					if(preSrc === currentSrc){
 						//消失
-						success();
+						success($this);
 					}else if($preImg !==null){
-						failed();
+						failed($this);
 					}else{
-						first();
+						first($this);
 					}
 				});	
 				
@@ -203,7 +221,7 @@
 		 * @method init 
 		 */
 		init:function(){
-			this.setTimer((new Date()).getTime() + 1000*1000);
+			this.setTimer((new Date()).getTime() + 125*1000);
 		},
 		
 		/**
@@ -222,7 +240,7 @@
 		 */
 		setTimer:function(stamp, callback){
 			$('#time').countdown({
-				timestamp	: stamp,
+				timestamp:stamp,
 				callback:callback
 			});
 		}
@@ -231,6 +249,97 @@
 	window.fan1xia = window.fan1xia || {};
 	window.fan1xia.Timer = window.fan1xia.Timer || Timer;
 	
+	/**
+	* 存贮罐类
+	* @class Store
+	* @constructor
+	* @extends window.fan1xia.Store.prototype
+	* @namespace window.fan1xia
+	*/
+	Store = function(){
+		
+	};
+	
+	/**
+	* Store构造函数的原型对象
+	*
+	* @class Store.prototype
+	*/
+	Store.prototype = {
+		/**
+		 * 重置
+		 * @method reset 
+		 * @param {String} src 路径
+		 */
+		reset:function(src){
+			src = src || './images/store.png';
+			this.src(src);
+		},
+		
+		/**
+		 * 放入东西
+		 * @method pull
+		 * @param {String} src 路径  
+		 */
+		pull:function(src){
+			src = src || './images/store-pull.png';
+			this.src(src);
+		},
+		
+		/**
+		 * 更改路径
+		 * @emthod src 
+		 * @param {String} src 路径
+		 */
+		src:function(src){
+			$('#result img').attr('src', src);
+		}
+	};
+	
+	/**
+	* 存贮罐类
+	* @class Score
+	* @constructor
+	* @extends window.fan1xia.Score.prototype
+	* @namespace window.fan1xia
+	*/
+	Score = function(){
+		
+	};
+	
+	/**
+	* Score构造函数的原型对象
+	*
+	* @class Score.prototype
+	*/
+	Score.prototype = {
+		/**
+		 * 重置
+		 * @method reset
+		 * @param {Number|undefined} level 级别
+		 */
+		reset:function(level){
+			//设置总队数
+			this.serTotalNumber(level*levle/2);
+		},
+		
+		/**
+		 *  设置总队数
+		 * @method setTotalNumber 
+		 * @param {Number} total 总队数
+		 */
+		setTotalNumber:function(total){
+			var
+				$tds = ('#score-panel td');
+			$tds[1].html(total + '对');
+		}
+	};
+	
+	window.fan1xia = window.fan1xia || {};
+	window.fan1xia.Store = window.fan1xia.Store || Store;
+	
+	window.fan1xia = window.fan1xia || {};
+	window.fan1xia.Score = window.fan1xia.Score || Score;
 	$(function(){
 		var timer = new Timer();
 		timer.init();

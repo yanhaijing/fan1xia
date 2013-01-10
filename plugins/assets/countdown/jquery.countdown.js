@@ -38,32 +38,30 @@
 			// Time left
 			left = Math.floor((options.timestamp - (new Date())) / 1000);
 			
-			if(left <= 0){
+			if(left < 0){
 				left = 0;
 				// Calling an optional user supplied callback
 				options.callback(d, h, m, s);
-			}
-			// Number of days left
-			d = Math.floor(left / days);
-			//updateDuo(0, 1, d);
-			left -= d*days;
-			
-			// Number of hours left
-			h = Math.floor(left / hours);
-			//updateDuo(2, 3, h);
-			left -= h*hours;
-			
-			// Number of minutes left
-			m = Math.floor(left / minutes);
-			updateDuo(0, 1, m);
-			left -= m*minutes;
-			
-			// Number of seconds left
-			s = left;
-			updateDuo(2, 3, s);
-			
-			// Scheduling another call of this function in 1s
-			if(left > 0){
+			}else{
+				// Number of days left
+				d = Math.floor(left / days);
+				//updateDuo(0, 1, d);
+				left -= d*days;
+				
+				// Number of hours left
+				h = Math.floor(left / hours);
+				//updateDuo(2, 3, h);
+				left -= h*hours;
+				
+				// Number of minutes left
+				m = Math.floor(left / minutes);
+				updateDuo(0, 1, m);
+				left -= m*minutes;
+				
+				// Number of seconds left
+				s = left;
+				updateDuo(2, 3, s);
+				// Scheduling another call of this function in 1s
 				setTimeout(tick, 1000);
 			}
 		}());
