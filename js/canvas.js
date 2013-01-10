@@ -35,7 +35,6 @@
 		 */
 		init:function(level, grad){			
 			this.bindClickEvent();
-			this.refresh(level, grad);
 		},
 		
 		/**
@@ -49,7 +48,8 @@
 			imgDoms = [],
 			$table = $('#canvas table'),
 			score = new window.fan1xia.Score(),
-			timer = new window.fan1xia.Timer();
+			timer = new window.fan1xia.Timer(),
+			store = new window.fan1xia.Store();
 			//收起 散开
 			$table.yanVhSlideCenter(0, function(){
 				$table.yanVhSlideSide('slow');
@@ -65,7 +65,9 @@
 			score.reset(level);
 			
 			//更新时钟
-			timer.setTimer((new Date()).getTime() + (level*10)*1000 + 10*1000);
+			timer.setTimer((new Date()).getTime() + (level*30)*1000 + 10*1000);
+			//更新储物箱
+			store.reset();
 		},
 		
 		/**
@@ -109,7 +111,14 @@
 		 * @method reset 
 		 */
 		reset:function(){
+			var score = new window.fan1xia.Score(),
+			timer = new window.fan1xia.Timer(),
+			store = new window.fan1xia.Store();
+			
 			$('#canvas table tbody').empty();
+			score.reset();
+			timer.reset();
+			store.reset();
 		},
 		
 		/**
@@ -118,6 +127,7 @@
 		 */
 		bindClickEvent:function(){
 			var 
+				$goHome = $('#go-home'),
 				$table = $('#canvas table'),
 				that = this,
 				$preImg = null,
@@ -183,6 +193,20 @@
 				});	
 				
 			});
+			
+			//绑定回到主菜单时间
+			$goHome.click(function(e){
+				that.reset();//重置画布
+				//旋转出元素
+				$('#wrap').rotate3Di(-90, 500, {complete:function(){
+					$(this).hide(0, function(){
+						$('#home').show(0, function(){
+							$(this).rotate3Di(90);
+							$('#home').rotate3Di(0, 1000, {complete:function(){}});
+						});
+					});
+				}});
+			});
 		},
 		
 		/**
@@ -246,6 +270,7 @@
 		 */
 		reset:function(){
 			$('#time').countdown();
+			$('#time').empty();
 		},
 		
 		/**

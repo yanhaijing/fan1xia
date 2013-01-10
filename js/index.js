@@ -31,7 +31,9 @@
 		 * @method init 
 		 */
 		init:function(){
+			var canvas = new window.fan1xia.Canvas();
 			this.bindClickEvent();//初始化点击事件
+			canvas.init();
 		},
 		/**
 		 * 
@@ -40,14 +42,34 @@
 			//绑定开始界面的事件
 			$('#home').delegate('button', 'click', function(e){
 				var
-					level = parseInt($(this).html(), 10),
-					canvas = new window.fan1xia.Canvas();
-				//隐藏home
-				$('#home').hide();
-				//显示画布
-				$('#wrap').show();
-				//刷新画布
-				canvas.init(level + 1, 2);
+					level = parseInt($(this).html(), 10) - 1,
+					canvas = new window.fan1xia.Canvas(),
+					callback = function(){},
+					levels = [];
+					
+				levels = [{level:2, grad:2},
+						{level:4, grad:2},	
+						{level:6, grad:4},
+						{level:6, grad:2},
+						{level:8, grad:16},
+						{level:8, grad:8},
+						{level:8, grad:4}
+				];
+				
+				//刷新完成回调函数
+				callback = function(){
+					//刷新画布
+					canvas.refresh(levels[level].level, levels[level].grad);
+				};
+				//旋转出元素
+				$('#home').rotate3Di(90, 500, {complete:function(){
+					$(this).hide(0, function(){
+						$('#wrap').show(0, function(){
+							$(this).rotate3Di(-90);
+							$('#wrap').rotate3Di(0, 1000, {complete:function(){callback();}});
+						});
+					});
+				}});
 			});
 		}
 	};
