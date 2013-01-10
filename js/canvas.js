@@ -33,21 +33,22 @@
 		 */
 		init:function(){
 			this.bindClickEvent();
-			this.refresh(6);
+			this.refresh(4, 4);
 		},
 		
 		/**
 		 * 刷新画布元素
 		 * @method refresh 
 		 * @param {Number} level游戏的级别
+		 * @param {Number} grad 游戏单个图象重复的次数
 		 */
-		refresh:function(level){
+		refresh:function(level, grad){
 			var images = new window.fan1xia.Images(),
 			imgDoms = [];
 			//清空元素
 			this.reset();
 			//加载imagesdom
-			imgDoms = images.initImages(level*level, 2);
+			imgDoms = images.initImages(level*level, grad);
 			//构造html添加到画布元素
 			this.createHtml(imgDoms, level);
 		},

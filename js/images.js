@@ -177,10 +177,13 @@
 			var i = 0,
 			results = [],
 			len = images.length,
-			j = 0;
+			j = 0,
+			temp = [],
+			_$ = $;
 			for(i; i < len; i = i + 1){
 				for(j = 0; j < grad; j = j + 1){
-					results.push(images[i]);
+					temp[i*grad + j] = _$('<img src="' + images[i].attr('src') + '" rel="' + images[i].attr('rel')+ '">');
+					results.push(temp[i*grad + j]);
 				}
 			}
 			
