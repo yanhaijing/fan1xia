@@ -67,7 +67,7 @@ html,body{
 	cursor:pointer
 }
 #home button.click{
-	
+	background:#c0eb00;
 }
 /**
  * 	#time-wrap

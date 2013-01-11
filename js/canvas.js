@@ -65,8 +65,8 @@
 			score.reset(level);
 			
 			//更新时钟
-			//timer.init((new Date()).getTime() + (level*30)*1000 + 10*1000);
-			timer.init((new Date()).getTime() + 5*1000);
+			timer.init((new Date()).getTime() + (level*30)*1000 + 10*1000);
+			//timer.init((new Date()).getTime() + 5*1000);
 			//更新储物箱
 			store.reset();
 		},
@@ -172,7 +172,7 @@
 			};
 			
 			//绑定图片的点击事件	
-			$table.delegate('img[rel!=""]', 'click', function(e){
+			$table.delegate('img[rel!=""]:not(.front)', 'click', function(e){
 				var 
 					$this = $(this),
 					preSrc = $preImg !==null && $preImg.attr('rel'),
