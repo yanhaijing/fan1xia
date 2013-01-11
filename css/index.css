@@ -66,6 +66,9 @@ html,body{
 	box-shadow:0px 0px 20px #e2d1ec;
 	cursor:pointer
 }
+#home button.click{
+	
+}
 /**
  * 	#time-wrap
  * ===============================================

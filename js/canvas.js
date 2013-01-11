@@ -65,7 +65,8 @@
 			score.reset(level);
 			
 			//更新时钟
-			timer.setTimer((new Date()).getTime() + (level*30)*1000 + 10*1000);
+			//timer.init((new Date()).getTime() + (level*30)*1000 + 10*1000);
+			timer.init((new Date()).getTime() + 5*1000);
 			//更新储物箱
 			store.reset();
 		},
@@ -260,8 +261,16 @@
 		 * 初始化
 		 * @method init 
 		 */
-		init:function(){
-			this.setTimer((new Date()).getTime() + 125*1000);
+		init:function(timestamp){
+			var that = this,
+			failed = new window.fan1xia.Failed();
+			function callback(){
+				that.reset();
+				failed.fail();
+			}
+			//先初始化
+			this.reset();
+			this.setTimer(timestamp, callback);
 		},
 		
 		/**
@@ -407,9 +416,26 @@
 		 * 
 		 */
 		decreaseRemainNumber:function(){
-			var count = this.getRemainNumber();
+			var count = this.getRemainNumber(),
+				success = {},
+				canvas = new window.fan1xia.Canvas();
 			
 			this.setRemainNumber(count - 1);
+			if(this.checkSuccess(count - 1)){
+				//返回胜利界面
+				success = new window.fan1xia.Success();
+				success.success();
+				canvas.reset();//重置画布
+			}
+		},
+		/**
+		 * 检查是否结束
+		 * @method checkSuccess 
+		 * @param {Number} count 数量
+		 * @param {Bollean} success 是否成功
+		 */
+		checkSuccess:function(count){
+			return count === 0 ? true : false; 
 		},
 		/**
 		 * 设置还剩对少对
