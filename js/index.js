@@ -69,7 +69,7 @@
 						{level:8, grad:4}
 				];
 				//添加点击效果
-				that.current = level;
+				window.fan1xia.Index.prototype.current = level;
 				$(this).addClass('click');
 				//刷新完成回调函数
 				callback = function(){
