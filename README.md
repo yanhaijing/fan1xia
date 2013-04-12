@@ -1,4 +1,6 @@
-![翻一下](./images/fan.gif "Logo")
+<a href="https://github.com/yanhaijing/fan1xia">
+  <img src="./images/fan.gif" width="100px">
+</a>
 
 #[Fan1xia](https://github.com/yanhaijing/fan1xia)
 
