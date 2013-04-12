@@ -1,4 +1,4 @@
-![翻一下](./images/fan..gif "Logo")
+![翻一下](./images/fan.gif "Logo")
 
 #[Fan1xia](https://github.com/yanhaijing/fan1xia)
 
@@ -19,4 +19,3 @@ Licensed under the MIT-LICENSE;
 you may not use this work except in compliance with the License.
 You may obtain a copy of the License in the LICENSE file, or at:
 	[http://opensource.org/licenses/MIT](http://opensource.org/licenses/MIT)
-
