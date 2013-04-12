@@ -14,25 +14,37 @@ html,body{
  * ==============================================
  */
 #failed{
-	display:none;
 }
-/**
- * 	胜利元素css
- * =============================================
- */
-#success{
-	display:none
-}
+
 /**
  * 	外边的包裹
  * ================================================
  */
 #wrap,#failed,#success,#home{
-	display:none;
 	width:1020px;
 	height:100%;
 	margin:auto;
 	background: -webkit-gradient(linear,0% 0%, 0% 100%, from(#9d5e70), to(#cd9191));
+}
+
+/**
+ * 	胜利元素css
+ * =============================================
+ */
+#success{
+	background: url(../images/success-bg.gif);
+}
+.try-again{
+	background:url(../images/run-again.png) no-repeat;
+	width:533px;
+	height:112px;
+	border: 0
+}
+.go-home{
+	background:url(../images/go-home.png) no-repeat;
+	width:533px;
+	height:112px;
+	border: 0
 }
 /**
  * 	home对象css
@@ -64,7 +76,9 @@ html,body{
 	-moz-box-shadow:0px 0px 20px #e2d1ec; 
 	-webkit-box-shadow:0px 0px 20px #e2d1ec; 
 	box-shadow:0px 0px 20px #e2d1ec;
-	cursor:pointer
+	cursor:pointer;
+	-webkit-text-stroke: 1.0px #000000;
+	text-shadow:2px 2px 5px #333333;
 }
 #home button.click{
 	background:#c0eb00;
