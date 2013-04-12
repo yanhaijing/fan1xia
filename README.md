@@ -14,6 +14,14 @@ fan1xia is a game like window 7's little games work on chrome/firefox/opera/ie10
 * safira
 * ie10+
 
+##Demo
+
+[http://yanhaijing.github.com/fan1xia](http://yanhaijing.github.com/fan1xia)
+
+##Issues
+
+[Report a Problem](https://github.com/yanhaijing/fan1xia/issues)
+
 ##Authors
 
 **yanhaijing**
