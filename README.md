@@ -37,3 +37,5 @@ Licensed under the MIT-LICENSE;
 you may not use this work except in compliance with the License.
 You may obtain a copy of the License in the LICENSE file, or at:
 	[http://opensource.org/licenses/MIT](http://opensource.org/licenses/MIT)
+	
+**note:** Some pictures from Google and Microsoft, so they authorized in use 
