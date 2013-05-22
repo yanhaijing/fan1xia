@@ -2,11 +2,39 @@
 /**
  * 	index 页面的css
  */
-html,body{
+html,body{	
 	width:100%;
 	height:100%;
+	min-width:800px;
+	min-height:600px;
 	background:#1396ce;
-	background:-webkit-gradient(linear,0% 0%, 0% 100%, from(#0037ac), to(#0037ac), color-stop(0.3, #5096f6), color-stop(0.5,#1396ce), color-stop(0.7, #5096f6))
+	background:-webkit-gradient(linear,0% 0%, 0% 100%, from(#0037ac), to(#0037ac), color-stop(0.3, #5096f6), color-stop(0.5,#1396ce), color-stop(0.7, #5096f6));
+	background:-moz-linear-gradient(#0037ac, #5096f6 30%, #1396ce 50%, #5096f6 70%, #0037ac);
+	background:linear-gradient(#0037ac, #5096f6 30%, #1396ce 50%, #5096f6 70%, #0037ac);
+}
+
+/**
+ * 	载入区域
+ * ======================
+ */
+.loading{
+	position: absolute;
+	z-index: 10000;
+	width:100%;
+	height:100%;
+	background:#fff;
+	text-align: center;
+	font-size: 36px
+}
+.loading img{
+	margin:10% auto 0
+}
+.loading .progress{
+	margin: 10% auto 0;
+	width: 60%
+}
+.loading p{
+	margin-top:50px
 }
 
 /**
@@ -14,8 +42,14 @@ html,body{
  * ==============================================
  */
 #failed{
+	display: none
 }
-
+#failed p{
+	color:#fff;
+	font-size: 48px;
+	text-align:center;
+	padding: 50px
+}
 /**
  * 	外边的包裹
  * ================================================
@@ -25,6 +59,10 @@ html,body{
 	height:100%;
 	margin:auto;
 	background: -webkit-gradient(linear,0% 0%, 0% 100%, from(#9d5e70), to(#cd9191));
+	background:-moz-linear-gradient(#9d5e70,#cd9191);
+	background:linear-gradient(#9d5e70, #cd9191);
+	display:none;
+	overflow:hidden;
 }
 
 /**
@@ -33,18 +71,39 @@ html,body{
  */
 #success{
 	background: url(../images/success-bg.gif);
+	display: block;
+	text-align: center
 }
-.try-again{
-	background:url(../images/run-again.png) no-repeat;
-	width:533px;
-	height:112px;
-	border: 0
+#success h1{
+	padding-top: 30px;
+	color:#FFFFFF;
+	font-size: 72px;
+	font-weight: bolder;
+	line-height: 1.5em;
+	text-shadow: 3px 3px 20px #E7DFAE;
 }
-.go-home{
-	background:url(../images/go-home.png) no-repeat;
-	width:533px;
-	height:112px;
-	border: 0
+.try-again,.go-home{
+	border: 0;
+	color:#2D1C08;
+	font-size: 32px;
+	line-height: 1.5em;
+	padding:10px 20px;
+	font-style: italic;
+	background: #E7DFAE;
+	border-radius: 10px;
+	cursor: pointer;
+	text-shadow: 3px 3px 20px #2D1C08;
+	box-shadow: 0px 0px 20px #E7DFAE
+}
+#success ul{
+	margin-bottom:50px
+}
+#success ul li{
+	color: #FFFFFF;
+}
+#success ul li strong{
+	font-size: 32px;
+	color: #E7DFAE
 }
 /**
  * 	home对象css
@@ -53,6 +112,8 @@ html,body{
 #home{
 	display:block;
 	background:-webkit-gradient(linear,0% 0%, 0% 100%, from(#180002), to(#180002), color-stop(0.5, #aa5709));
+	background:-moz-linear-gradient(#180002, #aa5709 50%, #180002);
+	background:linear-gradient(#180002, #aa5709 50%, #180002);
 	color:#fff;
 	font-size:40px;
 	font-weight:bold;

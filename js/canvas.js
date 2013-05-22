@@ -354,7 +354,9 @@
 	* @namespace window.fan1xia
 	*/
 	Score = function(){
-		
+		this.totalPairs = 0;
+		this.clickCount = 0;
+		this.errorCount = 0;
 	};
 	
 	/**
@@ -388,6 +390,12 @@
 			var
 				$tds = $('#score-panel td');
 			$tds.eq(1).html(total + '对');
+			this.totalPairs = total;
+			
+			return this.totalPairs;
+		},
+		getTotalNumber:function(){
+		    return this.totalPairs;
 		},
 		
 		/**
@@ -447,16 +455,16 @@
 			var
 				$tds = $('#score-panel td');
 			$tds.eq(5).html(count + '次');
+		    this.clickCount = count;
+		    return count;
 		},
 		/**
 		 * 获取点击次数
 		 * @method getClickCount
 		 * @return {Number} count 点击次数 
 		 */
-		getClickCount:function(){
-			var
-				$tds = $('#score-panel td');
-			return parseInt($tds.eq(5).html(), 10);
+		getClickCount:function(){			
+			return this.clickCount;
 		},
 		/**
 		 *  增加点击次数
@@ -475,6 +483,8 @@
 			var
 				$tds = $('#score-panel td');
 			$tds.eq(7).html(count + '次');
+			this.errorCount = count;
+			return count;
 		},
 		/**
 		 * 获取错误次数
@@ -482,7 +492,7 @@
 		 * @return {Number} count 错误次数 
 		 */
 		getErrorCount:function(){
-			return parseInt($('#score-panel td').eq(7).html(), 10);
+			return this.errorCount;
 		},
 		
 		/**
