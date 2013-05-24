@@ -29,16 +29,16 @@
 	* @class Index.prototype
 	*/
 	Index.prototype = {
-		current:null,
 		/**
 		 * 初始化
 		 * @method init 
 		 */
 		init:function(){
-			var canvas = new window.fan1xia.Canvas(),
-			success = new window.fan1xia.Success(),
-			failed = new window.fan1xia.Failed();
+			var canvas = new window.fan1xia.model.Canvas(),
+			success = new Success(),
+			failed = new Failed();
 			
+			window.fan1xia.canvas = canvas;//更新画布
 			this.bindClickEvent();//初始化点击事件
 			canvas.init();
 			
@@ -54,7 +54,7 @@
 			$('#home').delegate('button', 'click', function(e){
 				var
 					level = parseInt($(this).html(), 10) - 1,
-					canvas = new window.fan1xia.Canvas(),
+					canvas = window.fan1xia.canvas,
 					callback = function(){},
 					levels = [];
 					
@@ -69,7 +69,7 @@
 						{level:8, grad:4}
 				];
 				//添加点击效果
-				window.fan1xia.Index.prototype.current = level;
+				window.fan1xia.currentLevel = level;
 				$(this).addClass('click');
 				//刷新完成回调函数
 				callback = function(){
@@ -103,12 +103,51 @@
 		 * @method success 
 		 */
 		success:function(){
+		    var 
+		      canvas = window.fan1xia.canvas,
+		      score = canvas.score,
+		      total = score.totalPairs,
+		      error = score.errorCount,
+		      click = score.clickCount,
+		      scoreNum = parseInt(2*total*100/click, 10),
+		      $success = $('#success'),
+		      $pair = $("#pair strong", $success),
+		      $click = $("#click strong", $success),
+		      $error = $("#error strong", $success),
+		      $score = $("#score strong", $success),
+		      $hightScore = $("#hight-score strong", $success);
+		    
+		    $pair.html(total);
+		    $click.html(click);
+		    $error.html(error);
+		    $score.html(scoreNum);
+		    
+		    //添加QQ分享
+		    (function(){
+                var p = {
+                    url:location.href, /*获取URL，可加上来自分享到QQ标识，方便统计*/
+                    desc:'哈哈！！！我得了' + scoreNum + '分，您是否能找到板上所有的匹配？翻转一块墙砖会显示一张图片，然后尝试在其他地方找到其匹配。记住图片的位置，因为如果翻转的墙砖上的图片不匹配，您将必须重试。匹配所有图片才能获胜。', /*分享理由(风格应模拟用户对话),支持多分享语随机展现（使用|分隔）*/
+                    title:'翻一下', /*分享标题(可选)*/
+                    summary:'翻一下是一款类似小丑配对的游戏，能增加记忆力', /*分享摘要(可选)*/
+                    pics:'http://yanhaijing.github.io/fan1xia/images/fan.gif', /*分享图片(可选)*/
+                    site:'https://github.com/yanhaijing', /*分享来源(可选) 如：QQ分享*/
+                    style:'101',
+                    width:96,
+                    height:24
+                };
+                var s = [];
+                for(var i in p){
+                    s.push(i + '=' + encodeURIComponent(p[i]||''));
+                }
+                $("#share-qzone-success").attr("href", "http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?" + s.join('&'));
+            })();
+
 			//旋转出元素
 			$('#wrap').rotate3Di(-90, 500, {complete:function(){
 				$(this).hide(0, function(){
-					$('#success').show(0, function(){
+					$success.show(0, function(){
 						$(this).rotate3Di(90);
-						$('#success').rotate3Di(0, 1000, {complete:function(){}});
+						$success.rotate3Di(0, 1000, {complete:function(){}});
 					});
 				});
 			}});
@@ -132,8 +171,8 @@
 			//绑定再试一次事件
 			$success.delegate('.try-again', 'click', function(e){
 				var
-					level = new window.fan1xia.Index().current,
-					canvas = new window.fan1xia.Canvas(),
+					level = window.fan1xia.currentLevel,
+					canvas = window.fan1xia.canvas,
 					callback = function(){},
 					levels = [];
 					
@@ -208,8 +247,8 @@
 			//绑定再试一次事件
 			$failed.delegate('.try-again', 'click', function(e){
 				var
-					level = new window.fan1xia.Index().current,
-					canvas = new window.fan1xia.Canvas(),
+					level = window.fan1xia.currentLevel,
+					canvas = window.fan1xia.canvas,
 					callback = function(){},
 					levels = [];
 					
@@ -240,16 +279,12 @@
 			});
 		}
 	};
-	window.fan1xia = window.fan1xia || {};
-	window.fan1xia.Index = window.fan1xia.Index || Index;
 	
 	window.fan1xia = window.fan1xia || {};
-	window.fan1xia.Failed = window.fan1xia.Failed || Failed;
-	
-	window.fan1xia = window.fan1xia || {};
-	window.fan1xia.Success = window.fan1xia.Success || Success;
+    window.fan1xia.Failed = Failed;
+    window.fan1xia.Success = Success;
 	$(function(){
-		var index = new window.fan1xia.Index();
+		var index = new Index();
 		index.init();
 	})
 }(jQuery, window));

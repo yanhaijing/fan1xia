@@ -3,6 +3,8 @@
 	<head>
 		<meta charset="UTF-8" />
 		<title>颜海镜翻一下1.0beta版</title>
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="images/fan.gif" />
 		<link href="./css/reset.css" rel="stylesheet" />
 		<link href="./css/index.css" rel="stylesheet"/>
 		<link href="./plugins/assets/countdown/jquery.countdown.css" rel="stylesheet"/>
@@ -49,39 +51,24 @@
 				<li id="error">
 					点错: <strong>5</strong> 次
 				</li>
-				<li id="timeCount">
-					耗时: <strong>5</strong> 秒
-				</li>
-				<li id="memory">
-					记忆力: <strong>100</strong>
-				</li>
-				<li id="speed">
-					反应速度: <strong>100</strong>
-				</li>
 				<li id="score">
 					总评分: <strong>100</strong>
 				</li>
-				<li id="hight-score">
-					历史最高分: <strong>100</strong>
+				<li>
+					历史最高分: <strong>0</strong>
 				</li>
-				<li id="nav-share-qq">
-					<a class="qcShareQQDiv" href="#" target="_blank">分享到QQ</a>
-				</li>
-				<li id="nav-share-qzone">
-					<a version="1.0" class="qzOpenerDiv" href="#" target="_blank">QQ空间</a>
-				</li>
-				<li id="nav-share-qweibo">
-					<div id="qqwb_share__" data-appkey="801358347" data-icon="1" data-counter="1" data-counter_pos="right" data-content="Painter" data-richcontent="Html5|Canvas|Javascript" data-pic="http://yanhaijing.github.io/Painter/images/Painter.gif"></div>
+				<li>
+					<a id="share-qzone-success" version="1.0" class="share-qzone qzOpenerDiv" href="#" target="_blank"></a>
 				</li>
 			</ul>
 			<button class="try-again">Try again</button>
 			<button class="go-home">Go Home</button>
 		</div><!--end of #success-->
 		<div id="failed">
-			<p>很遗憾失败了</p>
-			
+			<p>很遗憾失败了</p>						
 			<button class="try-again">Try again</button>
 			<button class="go-home">Go Home</button>
+			<a id="share-qzone-failed" version="1.0" class="share-qzone qzOpenerDiv" href="#" target="_blank"></a>				
 		</div><!--end of @failed-->
 		<div id="wrap">
 			<aside id="time-wrap">
@@ -118,14 +105,11 @@
 		</div><!-- end of #wrap -->
 	</body>
 	<script type="text/javascript" src="./js/index.js"></script>
-	<script type="text/javascript" src="./js/canvas.js"></script>
-	<script type="text/javascript" src="./js/images.js"></script>
+	<script type="text/javascript" src="js/model/canvasModel.js"></script>
+	<script type="text/javascript" src="js/model/imagesModel.js"></script>
 	
 	<!-- 分享组件js -->
-	<!-- <script src="js/controler/share.js"></script>
-	<script src="http://qzonestyle.gtimg.cn/qzone/app/qzlike/qzopensl.js#jsdate=20111201" charset="utf-8"></script>
-	<script src="http://mat1.gtimg.com/app/openjs/openjs.js#autoboot=no&debug=no"></script>
-	<script src="http://connect.qq.com/widget/loader/loader.js" widget="shareqq" charset="utf-8"></script> -->
+	<script src="js/share.js"></script>
 	<!-- 导入load js -->
 	<script src="js/loading.js"></script>
 </html>

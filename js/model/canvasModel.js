@@ -20,7 +20,9 @@
 	* @namespace window.fan1xia
 	*/
 	Canvas = function(){
-		
+		this.timer = null;
+		this.score = null;
+		this.store = null;
 	};
 	
 	/**
@@ -33,8 +35,16 @@
 		 * 初始化
 		 * @method init 
 		 */
-		init:function(level, grad){			
-			this.bindClickEvent();
+		init:function(level, grad){
+		    var
+		        score = new Score(),
+                timer = new Timer(),
+                store = new Store();
+                
+            this.score = score;
+            this.timer = timer;
+            this.store = store;
+			this.bindClickEvent();			
 		},
 		
 		/**
@@ -44,12 +54,13 @@
 		 * @param {Number} grad 游戏单个图象重复的次数
 		 */
 		refresh:function(level, grad){
-			var images = new window.fan1xia.Images(),
+			var images = new window.fan1xia.model.Images(),
 			imgDoms = [],
 			$table = $('#canvas table'),
-			score = new window.fan1xia.Score(),
-			timer = new window.fan1xia.Timer(),
-			store = new window.fan1xia.Store();
+			score = this.score,
+			timer = this.timer,
+			store = this.store;
+
 			//收起 散开
 			$table.yanVhSlideCenter(0, function(){
 				$table.yanVhSlideSide('slow');
@@ -65,8 +76,7 @@
 			score.reset(level);
 			
 			//更新时钟
-			timer.init((new Date()).getTime() + (level*30)*1000 + 10*1000);
-			//timer.init((new Date()).getTime() + 5*1000);
+			timer.init((new Date()).getTime() + (level*level)*1000 + level*10*1000);
 			//更新储物箱
 			store.reset();
 		},
@@ -112,14 +122,16 @@
 		 * @method reset 
 		 */
 		reset:function(){
-			var score = new window.fan1xia.Score(),
-			timer = new window.fan1xia.Timer(),
-			store = new window.fan1xia.Store();
+			var 
+			score = this.score,
+			timer = this.timer,
+			store = this.store;
 			
 			$('#canvas table tbody').empty();
 			score.reset();
 			timer.reset();
 			store.reset();
+			window.console.log("重置画布");
 		},
 		
 		/**
@@ -133,8 +145,8 @@
 				that = this,
 				$preImg = null,
 				sound = new window.yan.Sound(),
-				store = new window.fan1xia.Store(),
-				score = new window.fan1xia.Score(),
+				score = this.score,
+                store = this.store,
 				success = function(){},
 				failed = function(){},
 				first = function(){};
@@ -238,9 +250,7 @@
 			}});
 		}
 	};
-	
-	window.fan1xia = window.fan1xia || {};
-	window.fan1xia.Canvas = window.fan1xia.Canvas || Canvas;
+		
 	
 	/**
 	* 图片类类
@@ -269,7 +279,6 @@
 				failed.fail();
 			}
 			//先初始化
-			this.reset();
 			this.setTimer(timestamp, callback);
 		},
 		
@@ -278,8 +287,8 @@
 		 * @method reset 
 		 */
 		reset:function(){
-			$('#time').countdown();
-			$('#time').empty();
+		    window.console.log("重置时间控件");
+			$('#time').countdown({reset:true});
 		},
 		
 		/**
@@ -295,9 +304,7 @@
 			});
 		}
 	};
-	
-	window.fan1xia = window.fan1xia || {};
-	window.fan1xia.Timer = window.fan1xia.Timer || Timer;
+		
 	
 	/**
 	* 存贮罐类
@@ -426,7 +433,7 @@
 		decreaseRemainNumber:function(){
 			var count = this.getRemainNumber(),
 				success = {},
-				canvas = new window.fan1xia.Canvas();
+				canvas = window.fan1xia.canvas;
 			
 			this.setRemainNumber(count - 1);
 			if(this.checkSuccess(count - 1)){
@@ -503,15 +510,11 @@
 		}
 	};
 	
-	window.fan1xia = window.fan1xia || {};
-	window.fan1xia.Store = window.fan1xia.Store || Store;
 	
 	window.fan1xia = window.fan1xia || {};
-	window.fan1xia.Score = window.fan1xia.Score || Score;
-	$(function(){
-		/*var timer = new Timer();
-		timer.init();
-		var canvas = new Canvas();
-		canvas.init();*/
-	});
+	window.fan1xia.model = window.fan1xia.model || {};
+    window.fan1xia.model.Canvas = Canvas;
+    window.fan1xia.model.Timer = Timer;
+	window.fan1xia.model.Store = Store;
+	window.fan1xia.model.Score = Score;
 }(jQuery, window));

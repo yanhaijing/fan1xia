@@ -12,7 +12,12 @@ html,body{
 	background:-moz-linear-gradient(#0037ac, #5096f6 30%, #1396ce 50%, #5096f6 70%, #0037ac);
 	background:linear-gradient(#0037ac, #5096f6 30%, #1396ce 50%, #5096f6 70%, #0037ac);
 }
-
+.share-qzone{
+	width:121px;
+	height:26px;
+	display: inline-block;
+	background: url("../images/intro.gif")
+}
 /**
  * 	载入区域
  * ======================
@@ -42,13 +47,14 @@ html,body{
  * ==============================================
  */
 #failed{
-	display: none
+	display: block;
+	text-align: center
 }
 #failed p{
 	color:#fff;
 	font-size: 48px;
 	text-align:center;
-	padding: 50px
+	padding: 150px
 }
 /**
  * 	外边的包裹
@@ -64,14 +70,15 @@ html,body{
 	display:none;
 	overflow:hidden;
 }
-
+#failed{
+	display: block
+}
 /**
  * 	胜利元素css
  * =============================================
  */
 #success{
 	background: url(../images/success-bg.gif);
-	display: block;
 	text-align: center
 }
 #success h1{
@@ -104,6 +111,9 @@ html,body{
 #success ul li strong{
 	font-size: 32px;
 	color: #E7DFAE
+}
+#share-qzone-success{
+	margin:20px
 }
 /**
  * 	home对象css

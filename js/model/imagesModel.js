@@ -226,5 +226,6 @@
 	};
 	
 	window.fan1xia = window.fan1xia || {};
-	window.fan1xia.Images = window.fan1xia.Images || Images;
+	window.fan1xia.model = window.fan1xia.model || {};
+	window.fan1xia.model.Images = Images;
 }(jQuery, window));
