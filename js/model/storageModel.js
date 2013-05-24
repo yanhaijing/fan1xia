@@ -53,7 +53,7 @@
         }
     };
     
-    global.painter = global.painter || {};
-    global.painter.model = global.painter.model || {};
-    global.painter.model.StorageModel = StorageModel;
+    global.fan1xia = global.fan1xia || {};
+    global.fan1xia.model = global.fan1xia.model || {};
+    global.fan1xia.model.StorageModel = StorageModel;
 }(jQuery, window));

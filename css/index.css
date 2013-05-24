@@ -47,7 +47,6 @@ html,body{
  * ==============================================
  */
 #failed{
-	display: block;
 	text-align: center
 }
 #failed p{
@@ -69,9 +68,6 @@ html,body{
 	background:linear-gradient(#9d5e70, #cd9191);
 	display:none;
 	overflow:hidden;
-}
-#failed{
-	display: block
 }
 /**
  * 	胜利元素css

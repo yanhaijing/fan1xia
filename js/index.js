@@ -115,12 +115,23 @@
 		      $click = $("#click strong", $success),
 		      $error = $("#error strong", $success),
 		      $score = $("#score strong", $success),
-		      $hightScore = $("#hight-score strong", $success);
+		      $hightScore = $("#hight-score strong", $success),
+		      level = window.fan1xia.currentLevel,
+		      storage = new window.fan1xia.model.StorageModel(),
+		      key = "fan1xiaHightScoreLevel" + level, 
+		      hightScore;
 		    
+		    storage.init();//初始化存储
+		    hightScore = storage.load(key) || 0;
+		    
+		    if(scoreNum >= hightScore){
+		        storage.save(key, scoreNum);
+		    }
 		    $pair.html(total);
 		    $click.html(click);
 		    $error.html(error);
 		    $score.html(scoreNum);
+		    $hightScore.html(hightScore);
 		    
 		    //添加QQ分享
 		    (function(){
