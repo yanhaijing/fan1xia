@@ -76,7 +76,7 @@
 			score.reset(level);
 			
 			//更新时钟
-			timer.init((new Date()).getTime() + (level*level)*1000 + level*10*1000);
+			timer.init((new Date()).getTime() + (level*level)*1000 + level*20*1000);
 			//更新储物箱
 			store.reset();
 		},
@@ -386,8 +386,19 @@
 			this.setClickCount();
 			//设置错误次数
 			this.setErrorCount();
+			this.setLevel(window.fan1xia.currentLevel+1);
 		},
 		
+		/**
+		 * 设置难度
+		 */
+		setLevel:function(level){
+		   var
+                $tds = $('#score-panel td');
+            $tds.eq(9).html(level);
+            
+            return level;  
+		},
 		/**
 		 *  设置总队数
 		 * @method setTotalNumber 

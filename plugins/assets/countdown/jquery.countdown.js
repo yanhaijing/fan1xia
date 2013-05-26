@@ -29,6 +29,12 @@
 		appid = 'timer' + (options.id || $(this).selector.replace(/\W/g, ''));//获取id，没有的话区则选择符
 		console.log(appid);
 		
+		// This function updates two digit positions at once
+        function updateDuo(minor,major,value){
+            switchDigit(positions.eq(minor),Math.floor(value/10)%10);
+            switchDigit(positions.eq(major),value%10);
+        }
+		
 		$.fn.countdown.list = $.fn.countdown.list || [];
 		$.fn.countdown.list[appid] = $.fn.countdown.list[appid] || {};		
 		//重置
@@ -75,16 +81,8 @@
                         setTimeout(tick, 1000);
                     }               
                 }
-            })();
-            
-            // This function updates two digit positions at once
-            function updateDuo(minor,major,value){
-                switchDigit(positions.eq(minor),Math.floor(value/10)%10);
-                switchDigit(positions.eq(major),value%10);
-            }
-		}
-
-		
+            }());                        
+		}		
 		return this;
 	};
 

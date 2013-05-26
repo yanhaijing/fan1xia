@@ -53,7 +53,11 @@
 				'Rabbit.bmp',
 				'Rose.bmp',
 				'Sun.bmp',
-				'Women.bmp'
+				'Women.bmp',
+				'get.gif',
+				'panda.gif',
+				'elephant.gif',
+				'haitun.gif'
 			],
 			
 		/**

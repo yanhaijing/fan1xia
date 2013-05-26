@@ -20,7 +20,7 @@
 	* @namespace window.fan1xia
 	*/
 	Index = function(){
-		
+		this.levels = [];
 	};
 	
 	/**
@@ -44,6 +44,17 @@
 			
 			success.init();
 			failed.init();
+			window.fan1xia.levels = [{level:2, grad:2},
+                        {level:4, grad:4},
+                        {level:4, grad:2},
+                        {level:6, grad:6},  
+                        {level:6, grad:4},
+                        {level:6, grad:2},
+                        {level:8, grad:16},
+                        {level:8, grad:8},
+                        {level:8, grad:4},
+                        {level:8, grad:2}
+                ];
 		},
 		/**
 		 * 
@@ -58,16 +69,7 @@
 					callback = function(){},
 					levels = [];
 					
-				levels = [{level:2, grad:2},
-						{level:4, grad:4},
-						{level:4, grad:2},
-						{level:6, grad:6},	
-						{level:6, grad:4},
-						{level:6, grad:2},
-						{level:8, grad:16},
-						{level:8, grad:8},
-						{level:8, grad:4}
-				];
+				levels = window.fan1xia.levels;
 				//添加点击效果
 				window.fan1xia.currentLevel = level;
 				$(this).addClass('click');
@@ -116,12 +118,13 @@
 		      $error = $("#error strong", $success),
 		      $score = $("#score strong", $success),
 		      $hightScore = $("#hight-score strong", $success),
+		      $level = $("#level strong", $success),
 		      level = window.fan1xia.currentLevel,
 		      storage = new window.fan1xia.model.StorageModel(),
 		      key = "fan1xiaHightScoreLevel" + level, 
 		      hightScore;
 		    
-		    storage.init();//初始化存储
+		    storage.init();//初始化存储		    
 		    hightScore = storage.load(key) || 0;
 		    
 		    if(scoreNum >= hightScore){
@@ -132,12 +135,13 @@
 		    $error.html(error);
 		    $score.html(scoreNum);
 		    $hightScore.html(hightScore);
+		    $level.html(level);
 		    
 		    //添加QQ分享
 		    (function(){
                 var p = {
                     url:location.href, /*获取URL，可加上来自分享到QQ标识，方便统计*/
-                    desc:'哈哈！！！我得了' + scoreNum + '分，您是否能找到板上所有的匹配？翻转一块墙砖会显示一张图片，然后尝试在其他地方找到其匹配。记住图片的位置，因为如果翻转的墙砖上的图片不匹配，您将必须重试。匹配所有图片才能获胜。', /*分享理由(风格应模拟用户对话),支持多分享语随机展现（使用|分隔）*/
+                    desc:'哈哈！！！我在难度' + level + '中，得了' + scoreNum + '分，您是否能找到板上所有的匹配？翻转一块墙砖会显示一张图片，然后尝试在其他地方找到其匹配。记住图片的位置，因为如果翻转的墙砖上的图片不匹配，您将必须重试。匹配所有图片才能获胜。', /*分享理由(风格应模拟用户对话),支持多分享语随机展现（使用|分隔）*/
                     title:'翻一下', /*分享标题(可选)*/
                     summary:'翻一下是一款类似小丑配对的游戏，能增加记忆力', /*分享摘要(可选)*/
                     pics:'http://yanhaijing.github.io/fan1xia/images/fan.gif', /*分享图片(可选)*/
@@ -187,16 +191,7 @@
 					callback = function(){},
 					levels = [];
 					
-				levels = [{level:2, grad:2},
-						{level:4, grad:4},
-						{level:4, grad:2},
-						{level:6, grad:6},	
-						{level:6, grad:4},
-						{level:6, grad:2},
-						{level:8, grad:16},
-						{level:8, grad:8},
-						{level:8, grad:4}
-				];
+				levels = window.fan1xia.levels;
 				//刷新完成回调函数
 				callback = function(){
 					//刷新画布
@@ -261,18 +256,8 @@
 					level = window.fan1xia.currentLevel,
 					canvas = window.fan1xia.canvas,
 					callback = function(){},
-					levels = [];
+					levels = window.fan1xia.levels;
 					
-				levels = [{level:2, grad:2},
-						{level:4, grad:4},
-						{level:4, grad:2},
-						{level:6, grad:6},	
-						{level:6, grad:4},
-						{level:6, grad:2},
-						{level:8, grad:16},
-						{level:8, grad:8},
-						{level:8, grad:4}
-				];
 				//刷新完成回调函数
 				callback = function(){
 					//刷新画布
