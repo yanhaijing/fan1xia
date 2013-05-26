@@ -27,7 +27,6 @@
 		s, 
 		positions,
 		appid = 'timer' + (options.id || $(this).selector.replace(/\W/g, ''));//获取id，没有的话区则选择符
-		console.log(appid);
 		
 		// This function updates two digit positions at once
         function updateDuo(minor,major,value){

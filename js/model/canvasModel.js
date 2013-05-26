@@ -135,7 +135,6 @@
 			score.reset();
 			timer.reset();
 			store.reset();
-			window.console.log("重置画布");
 		},
 		
 		/**
@@ -291,7 +290,6 @@
 		 * @method reset 
 		 */
 		reset:function(){
-		    window.console.log("重置时间控件");
 			$('#time').countdown({reset:true});
 		},
 		
