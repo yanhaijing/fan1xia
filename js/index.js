@@ -135,7 +135,7 @@
 		    $error.html(error);
 		    $score.html(scoreNum);
 		    $hightScore.html(hightScore);
-		    $level.html(level);
+		    $level.html(level + 1);
 		    
 		    //添加QQ分享
 		    (function(){

@@ -23,6 +23,7 @@
 		this.timer = null;
 		this.score = null;
 		this.store = null;
+		this.images = null;
 	};
 	
 	/**
@@ -44,7 +45,9 @@
             this.score = score;
             this.timer = timer;
             this.store = store;
-			this.bindClickEvent();			
+			this.bindClickEvent();		
+			this.images = new window.fan1xia.model.Images();
+			this.images.init();	
 		},
 		
 		/**
@@ -54,7 +57,7 @@
 		 * @param {Number} grad 游戏单个图象重复的次数
 		 */
 		refresh:function(level, grad){
-			var images = new window.fan1xia.model.Images(),
+			var images = this.images,
 			imgDoms = [],
 			$table = $('#canvas table'),
 			score = this.score,
@@ -69,7 +72,7 @@
 			//清空元素
 			this.reset();
 			//加载imagesdom
-			imgDoms = images.initImages(level*level, grad);
+			imgDoms = images.getImages(level*level, grad);
 			//构造html添加到画布元素
 			this.createHtml(imgDoms, level);
 			//更新分数面板

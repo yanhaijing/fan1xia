@@ -17,7 +17,42 @@
 	* @namespace window.fan1xia
 	*/
 	var Images = function(){
-		
+		this.images = ['Alien 1.bmp',
+                'Alien 2.bmp',
+                'Balloon.bmp',
+                'Bear.bmp',
+                'Beaver.bmp',
+                'Birthday Cake.bmp',
+                'Chocolate Cake.bmp',
+                'Da Vinci.bmp',
+                'Dragon.bmp',
+                'Earth.bmp',
+                'Fireworks 1.bmp',
+                'Fireworks 2.bmp',
+                'Fish.bmp',
+                'Frog 1.bmp',
+                'Frog 2.bmp',
+                'Hand.bmp',
+                'Hitchcock.bmp',
+                'Leaf.bmp',
+                'Monkey 1.bmp',
+                'Monkey 2.bmp',
+                'Moon.bmp',
+                'Owl.bmp',
+                'Party Hat.bmp',
+                'Penguin.bmp',
+                'Rabbit.bmp',
+                'Rose.bmp',
+                'Sun.bmp',
+                'Women.bmp',
+                'get.gif',
+                'panda.gif',
+                'elephant.gif',
+                'haitun.gif'
+            ];
+            
+        this.imagesSrc = [];
+        this.imgs = [];
 	};
 	
 	/**
@@ -26,40 +61,10 @@
 	* @class Images.prototype
 	*/
 	Images.prototype = {
-		images:['Alien 1.bmp',
-				'Alien 2.bmp',
-				'Balloon.bmp',
-				'Bear.bmp',
-				'Beaver.bmp',
-				'Birthday Cake.bmp',
-				'Chocolate Cake.bmp',
-				'Da Vinci.bmp',
-				'Dragon.bmp',
-				'Earth.bmp',
-				'Fireworks 1.bmp',
-				'Fireworks 2.bmp',
-				'Fish.bmp',
-				'Frog 1.bmp',
-				'Frog 2.bmp',
-				'Hand.bmp',
-				'Hitchcock.bmp',
-				'Leaf.bmp',
-				'Monkey 1.bmp',
-				'Monkey 2.bmp',
-				'Moon.bmp',
-				'Owl.bmp',
-				'Party Hat.bmp',
-				'Penguin.bmp',
-				'Rabbit.bmp',
-				'Rose.bmp',
-				'Sun.bmp',
-				'Women.bmp',
-				'get.gif',
-				'panda.gif',
-				'elephant.gif',
-				'haitun.gif'
-			],
-			
+		init:function(){
+		      this.initImagesSrc();//初始化路径
+		      this.loadImages(this.getImagesSrc());
+		},
 		/**
 		 * 初始化图象的路径 
 		 * @method initImagesSrc
@@ -76,7 +81,12 @@
 				imgSrc[i] = './images/' + images[i];
 			}
 			
+			$.extend(true, this.imagesSrc, imgSrc);//扩展自身属性
 			return imgSrc;
+		},
+		
+		getImagesSrc:function(){
+		  return $.extend(true, [], this.imagesSrc);
 		},
 		
 		/**
@@ -96,7 +106,12 @@
 				imgs[i].src = imgSrcs[i];
 			}
 			
+			$.extend(true, this.imgs, imgs);//扩展自身属性
 			return imgs;
+		},
+		
+		getImageObjs:function(){
+		      return $.extend(true, [], this.imgs); 
 		},
 		
 		/*
@@ -226,10 +241,35 @@
 			expendDoms = this.randomImages(expendDoms.length, expendDoms);
 			
 			return expendDoms;
+		},
+		
+		getImages:function(count, grad){
+    		var 
+    		        results = [],
+                    imageObjs = [],
+                    imageDoms = [],
+                    num = count / grad,
+                    expendDoms = [],
+                    randomDoms = [];
+            //载入image对象
+            imageObjs = this.getImageObjs();
+            //创建doms对象
+            imageDoms = this.createImagesDom(imageObjs);
+            
+            //随机取图象
+            randomDoms = this.randomImages(num, imageDoms);
+            //扩展图象
+            
+            expendDoms = this.expendImages(randomDoms, grad);
+            
+            //随机排列图象
+            expendDoms = this.randomImages(expendDoms.length, expendDoms);
+            
+            return expendDoms;
 		}
 	};
 	
 	window.fan1xia = window.fan1xia || {};
-	window.fan1xia.model = window.fan1xia.model || {};
+	window.fan1xia.model = window.fan1xia.model || {};	
 	window.fan1xia.model.Images = Images;
 }(jQuery, window));
