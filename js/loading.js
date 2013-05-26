@@ -4,7 +4,7 @@
 
 (function($, global){
     "use strict";
-    window.addEventListener("load", function(){
+    $(window).bind("load", function(){
         $("#loading").fadeOut();
-    }, false);           
+    });           
 }(jQuery, window));

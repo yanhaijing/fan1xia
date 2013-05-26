@@ -24,6 +24,7 @@
 		this.score = null;
 		this.store = null;
 		this.images = null;
+		this.sound = new window.yan.Sound();
 	};
 	
 	/**
@@ -147,7 +148,7 @@
 				$table = $('#canvas table'),
 				that = this,
 				$preImg = null,
-				sound = new window.yan.Sound(),
+				sound = this.sound,
 				score = this.score,
                 store = this.store,
 				success = function(){},
