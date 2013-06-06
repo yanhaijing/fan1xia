@@ -43,7 +43,7 @@
 		    $(this).empty();//清空
 		}else{		    
 		    // Initialize the plugin
-            init(this, options);
+            init($(this), options);
             $.fn.countdown.list[appid].run = true;
             positions = this.find('.position');
             
@@ -91,7 +91,7 @@
 
 		// Creating the markup inside the container
 		$.each(['Minutes','Seconds'],function(i){
-			$('<span class="count'+this+'">').html(
+			$('<span class="count'+this+'"></span>').html(
 				'<span class="position">' +
 					'<span class="digit static">0</span>' +
 				'</span>' +
@@ -104,7 +104,8 @@
 				elem.append('<span class="countDiv countDiv'+i+'"></span>');
 			}
 		});
-
+        
+        
 	}
 
 	// Creates an animated transition between the two numbers
