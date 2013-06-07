@@ -1,9 +1,9 @@
 /** 
 * Index js主页js
 *
-* @module Index
+* @module index
+* @main index
 * @namespace fan1xia
-* @main Index
 * @author 颜海镜
 * @version 2012-09-29 15:20:04
 */

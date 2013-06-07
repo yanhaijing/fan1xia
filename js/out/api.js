@@ -13,21 +13,23 @@ YUI.add("yuidoc-meta", function(Y) {
         "fan1xia.model.Images.prototype",
         "fan1xia.model.Score",
         "fan1xia.model.Score.prototype",
+        "fan1xia.model.StorageModel",
+        "fan1xia.model.StorageModel.prototype",
         "fan1xia.model.Store",
         "fan1xia.model.Store.prototype",
         "fan1xia.model.Timer",
         "fan1xia.model.Timer.prototype"
     ],
     "modules": [
-        "CanvasModel",
-        "Index",
-        "Storage",
-        "imagesModel"
+        "canvasModel",
+        "imagesModel",
+        "index",
+        "storageModel"
     ],
     "allModules": [
         {
-            "displayName": "CanvasModel",
-            "name": "CanvasModel",
+            "displayName": "canvasModel",
+            "name": "canvasModel",
             "description": "画布对象"
         },
         {
@@ -36,13 +38,13 @@ YUI.add("yuidoc-meta", function(Y) {
             "description": "图片组对象"
         },
         {
-            "displayName": "Index",
-            "name": "Index",
+            "displayName": "index",
+            "name": "index",
             "description": "Index js主页js"
         },
         {
-            "displayName": "Storage",
-            "name": "Storage",
+            "displayName": "storageModel",
+            "name": "storageModel",
             "description": "本地存储类"
         }
     ]

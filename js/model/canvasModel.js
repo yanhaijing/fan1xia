@@ -1,9 +1,9 @@
 /** 
 * 画布对象
 *
-* @module CanvasModel
+* @module canvasModel
 * @namespace fan1xia.model
-* @main Canvas
+* @main canvasModel
 * @author 颜海镜
 * @version 2012-09-29 15:20:04
 */
@@ -377,7 +377,7 @@
 		
 		/**
 		 * 更改路径
-		 * @emthod src 
+		 * @method src 
 		 * @param {String} src 路径
 		 */
 		src:function(src){
@@ -442,6 +442,9 @@
 		
 		/**
 		 * 设置难度
+		 * @method setLevel
+		 * @param {Number} level 要设置的难度
+		 * @return {Number} 设置的难度
 		 */
 		setLevel:function(level){
 		   var
@@ -455,6 +458,7 @@
 		 * 设置总队数
 		 * @method setTotalNumber 
 		 * @param {Number} total 总队数
+		 * @return {Number} 总对数
 		 */
 		setTotalNumber:function(total){
 			var

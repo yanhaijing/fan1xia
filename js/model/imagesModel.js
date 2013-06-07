@@ -3,7 +3,7 @@
 *
 * @module imagesModel
 * @namespace fan1xia.model
-* @main Images
+* @main imagesModel
 * @author 颜海镜
 * @version 2012-09-29 15:20:04
 */

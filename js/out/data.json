@@ -4,7 +4,7 @@
         "model\\canvasModel.js": {
             "name": "model\\canvasModel.js",
             "modules": {
-                "CanvasModel": 1
+                "canvasModel": 1
             },
             "classes": {
                 "fan1xia.model.Canvas": 1,
@@ -38,18 +38,21 @@
         "model\\storageModel.js": {
             "name": "model\\storageModel.js",
             "modules": {
-                "Storage": 1
+                "storageModel": 1
             },
-            "classes": {},
+            "classes": {
+                "fan1xia.model.StorageModel": 1,
+                "fan1xia.model.StorageModel.prototype": 1
+            },
             "fors": {},
             "namespaces": {
-                "model": 1
+                "fan1xia.model": 1
             }
         },
         "index.js": {
             "name": "index.js",
             "modules": {
-                "Index": 1
+                "index": 1
             },
             "classes": {
                 "fan1xia.Index": 1,
@@ -63,25 +66,11 @@
             "namespaces": {
                 "fan1xia": 1
             }
-        },
-        "jquery-1.8.2.js": {
-            "name": "jquery-1.8.2.js",
-            "modules": {},
-            "classes": {},
-            "fors": {},
-            "namespaces": {}
-        },
-        "loading.js": {
-            "name": "loading.js",
-            "modules": {},
-            "classes": {},
-            "fors": {},
-            "namespaces": {}
         }
     },
     "modules": {
-        "CanvasModel": {
-            "name": "CanvasModel",
+        "canvasModel": {
+            "name": "canvasModel",
             "submodules": {},
             "classes": {
                 "fan1xia.model.Canvas": 1,
@@ -97,13 +86,11 @@
             "namespaces": {
                 "fan1xia.model": 1
             },
-            "tag": "module",
+            "tag": "main",
             "file": "model\\canvasModel.js",
             "line": 420,
             "description": "画布对象",
-            "itemtype": "main",
-            "author": "颜海镜",
-            "version": "2012-09-29 15:20:04"
+            "itemtype": "main"
         },
         "imagesModel": {
             "name": "imagesModel",
@@ -114,31 +101,34 @@
             },
             "fors": {},
             "namespaces": {
-                "fan1xia.model": 1,
-                "model": 1
+                "fan1xia.model": 1
             },
-            "tag": "module",
+            "tag": "main",
             "file": "model\\imagesModel.js",
             "line": 77,
             "description": "图片组对象",
-            "itemtype": "main",
-            "author": "颜海镜",
-            "version": "2012-09-29 15:20:04"
+            "itemtype": "main"
         },
-        "Storage": {
-            "name": "Storage",
+        "storageModel": {
+            "name": "storageModel",
             "submodules": {},
-            "classes": {},
+            "classes": {
+                "fan1xia.model.StorageModel": 1,
+                "fan1xia.model.StorageModel.prototype": 1
+            },
             "fors": {},
-            "namespaces": {},
-            "tag": "module",
+            "namespaces": {
+                "fan1xia.model": 1
+            },
+            "tag": "main",
             "file": "model\\storageModel.js",
-            "line": 1,
+            "line": 27,
             "description": "本地存储类",
-            "author": "yan"
+            "author": "yan",
+            "itemtype": "main"
         },
-        "Index": {
-            "name": "Index",
+        "index": {
+            "name": "index",
             "submodules": {},
             "classes": {
                 "fan1xia.Index": 1,
@@ -168,7 +158,7 @@
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "CanvasModel",
+            "module": "canvasModel",
             "namespace": "fan1xia.model",
             "file": "model\\canvasModel.js",
             "line": 16,
@@ -184,7 +174,7 @@
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "CanvasModel",
+            "module": "canvasModel",
             "namespace": "fan1xia.model",
             "file": "model\\canvasModel.js",
             "line": 64,
@@ -199,7 +189,7 @@
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "CanvasModel",
+            "module": "canvasModel",
             "namespace": "fan1xia.model",
             "file": "model\\canvasModel.js",
             "line": 292,
@@ -215,7 +205,7 @@
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "CanvasModel",
+            "module": "canvasModel",
             "namespace": "fan1xia.model",
             "file": "model\\canvasModel.js",
             "line": 300,
@@ -230,7 +220,7 @@
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "CanvasModel",
+            "module": "canvasModel",
             "namespace": "fan1xia.model",
             "file": "model\\canvasModel.js",
             "line": 344,
@@ -246,7 +236,7 @@
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "CanvasModel",
+            "module": "canvasModel",
             "namespace": "fan1xia.model",
             "file": "model\\canvasModel.js",
             "line": 352,
@@ -261,7 +251,7 @@
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "CanvasModel",
+            "module": "canvasModel",
             "namespace": "fan1xia.model",
             "file": "model\\canvasModel.js",
             "line": 388,
@@ -277,7 +267,7 @@
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "CanvasModel",
+            "module": "canvasModel",
             "namespace": "fan1xia.model",
             "file": "model\\canvasModel.js",
             "line": 420,
@@ -315,6 +305,37 @@
             "description": "Images构造函数的原型对象",
             "static": 1
         },
+        "fan1xia.model.StorageModel": {
+            "name": "fan1xia.model.StorageModel",
+            "shortname": "StorageModel",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "storageModel",
+            "namespace": "fan1xia.model",
+            "file": "model\\storageModel.js",
+            "line": 11,
+            "description": "本地存储类",
+            "is_constructor": 1,
+            "extends": "fan1xia.model.StorageModel.prototype"
+        },
+        "fan1xia.model.StorageModel.prototype": {
+            "name": "fan1xia.model.StorageModel.prototype",
+            "shortname": "StorageModel.prototype",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "storageModel",
+            "namespace": "fan1xia.model",
+            "file": "model\\storageModel.js",
+            "line": 27,
+            "description": "本地存储类原型对象",
+            "static": 1
+        },
         "fan1xia.Index": {
             "name": "fan1xia.Index",
             "shortname": "Index",
@@ -323,7 +344,7 @@
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "Index",
+            "module": "index",
             "namespace": "fan1xia",
             "file": "index.js",
             "line": 16,
@@ -339,7 +360,7 @@
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "Index",
+            "module": "index",
             "namespace": "fan1xia",
             "file": "index.js",
             "line": 32,
@@ -354,7 +375,7 @@
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "Index",
+            "module": "index",
             "namespace": "fan1xia",
             "file": "index.js",
             "line": 101,
@@ -370,7 +391,7 @@
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "Index",
+            "module": "index",
             "namespace": "fan1xia",
             "file": "index.js",
             "line": 110,
@@ -385,7 +406,7 @@
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "Index",
+            "module": "index",
             "namespace": "fan1xia",
             "file": "index.js",
             "line": 239,
@@ -401,7 +422,7 @@
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "Index",
+            "module": "index",
             "namespace": "fan1xia",
             "file": "index.js",
             "line": 248,
@@ -419,7 +440,7 @@
             "type": "Object",
             "default": "null",
             "class": "fan1xia.model.Canvas",
-            "module": "CanvasModel",
+            "module": "canvasModel",
             "namespace": "fan1xia.model"
         },
         {
@@ -431,7 +452,7 @@
             "type": "Object",
             "default": "null",
             "class": "fan1xia.model.Canvas",
-            "module": "CanvasModel",
+            "module": "canvasModel",
             "namespace": "fan1xia.model"
         },
         {
@@ -443,7 +464,7 @@
             "type": "Object",
             "default": "null",
             "class": "fan1xia.model.Canvas",
-            "module": "CanvasModel",
+            "module": "canvasModel",
             "namespace": "fan1xia.model"
         },
         {
@@ -455,7 +476,7 @@
             "type": "Object",
             "default": "null",
             "class": "fan1xia.model.Canvas",
-            "module": "CanvasModel",
+            "module": "canvasModel",
             "namespace": "fan1xia.model"
         },
         {
@@ -467,7 +488,7 @@
             "type": "Object",
             "default": "null",
             "class": "fan1xia.model.Canvas",
-            "module": "CanvasModel",
+            "module": "canvasModel",
             "namespace": "fan1xia.model"
         },
         {
@@ -477,7 +498,7 @@
             "itemtype": "method",
             "name": "init",
             "class": "fan1xia.model.Canvas.prototype",
-            "module": "CanvasModel",
+            "module": "canvasModel",
             "namespace": "fan1xia.model"
         },
         {
@@ -499,7 +520,7 @@
                 }
             ],
             "class": "fan1xia.model.Canvas.prototype",
-            "module": "CanvasModel",
+            "module": "canvasModel",
             "namespace": "fan1xia.model"
         },
         {
@@ -521,7 +542,7 @@
                 }
             ],
             "class": "fan1xia.model.Canvas.prototype",
-            "module": "CanvasModel",
+            "module": "canvasModel",
             "namespace": "fan1xia.model"
         },
         {
@@ -538,7 +559,7 @@
                 }
             ],
             "class": "fan1xia.model.Canvas.prototype",
-            "module": "CanvasModel",
+            "module": "canvasModel",
             "namespace": "fan1xia.model"
         },
         {
@@ -548,7 +569,7 @@
             "itemtype": "method",
             "name": "reset",
             "class": "fan1xia.model.Canvas.prototype",
-            "module": "CanvasModel",
+            "module": "canvasModel",
             "namespace": "fan1xia.model"
         },
         {
@@ -558,7 +579,7 @@
             "itemtype": "event",
             "name": "bindClickEvent",
             "class": "fan1xia.model.Canvas.prototype",
-            "module": "CanvasModel",
+            "module": "canvasModel",
             "namespace": "fan1xia.model"
         },
         {
@@ -580,7 +601,7 @@
                 }
             ],
             "class": "fan1xia.model.Canvas.prototype",
-            "module": "CanvasModel",
+            "module": "canvasModel",
             "namespace": "fan1xia.model"
         },
         {
@@ -602,7 +623,7 @@
                 }
             ],
             "class": "fan1xia.model.Canvas.prototype",
-            "module": "CanvasModel",
+            "module": "canvasModel",
             "namespace": "fan1xia.model"
         },
         {
@@ -612,7 +633,7 @@
             "itemtype": "method",
             "name": "init",
             "class": "fan1xia.model.Timer.prototype",
-            "module": "CanvasModel",
+            "module": "canvasModel",
             "namespace": "fan1xia.model"
         },
         {
@@ -622,7 +643,7 @@
             "itemtype": "method",
             "name": "reset",
             "class": "fan1xia.model.Timer.prototype",
-            "module": "CanvasModel",
+            "module": "canvasModel",
             "namespace": "fan1xia.model"
         },
         {
@@ -643,7 +664,7 @@
                 }
             ],
             "class": "fan1xia.model.Timer.prototype",
-            "module": "CanvasModel",
+            "module": "canvasModel",
             "namespace": "fan1xia.model"
         },
         {
@@ -660,7 +681,7 @@
                 }
             ],
             "class": "fan1xia.model.Store.prototype",
-            "module": "CanvasModel",
+            "module": "canvasModel",
             "namespace": "fan1xia.model"
         },
         {
@@ -677,14 +698,15 @@
                 }
             ],
             "class": "fan1xia.model.Store.prototype",
-            "module": "CanvasModel",
+            "module": "canvasModel",
             "namespace": "fan1xia.model"
         },
         {
             "file": "model\\canvasModel.js",
             "line": 378,
             "description": "更改路径",
-            "emthod": "src",
+            "itemtype": "method",
+            "name": "src",
             "params": [
                 {
                     "name": "src",
@@ -693,7 +715,7 @@
                 }
             ],
             "class": "fan1xia.model.Store.prototype",
-            "module": "CanvasModel",
+            "module": "canvasModel",
             "namespace": "fan1xia.model"
         },
         {
@@ -705,7 +727,7 @@
             "type": "Number",
             "default": "0",
             "class": "fan1xia.model.Score",
-            "module": "CanvasModel",
+            "module": "canvasModel",
             "namespace": "fan1xia.model"
         },
         {
@@ -717,7 +739,7 @@
             "type": "Number",
             "default": "0",
             "class": "fan1xia.model.Score",
-            "module": "CanvasModel",
+            "module": "canvasModel",
             "namespace": "fan1xia.model"
         },
         {
@@ -729,7 +751,7 @@
             "type": "Number",
             "default": "0",
             "class": "fan1xia.model.Score",
-            "module": "CanvasModel",
+            "module": "canvasModel",
             "namespace": "fan1xia.model"
         },
         {
@@ -746,20 +768,33 @@
                 }
             ],
             "class": "fan1xia.model.Score.prototype",
-            "module": "CanvasModel",
+            "module": "canvasModel",
             "namespace": "fan1xia.model"
         },
         {
             "file": "model\\canvasModel.js",
             "line": 443,
             "description": "设置难度",
+            "itemtype": "method",
+            "name": "setLevel",
+            "params": [
+                {
+                    "name": "level",
+                    "description": "要设置的难度",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "设置的难度",
+                "type": "Number"
+            },
             "class": "fan1xia.model.Score.prototype",
-            "module": "CanvasModel",
+            "module": "canvasModel",
             "namespace": "fan1xia.model"
         },
         {
             "file": "model\\canvasModel.js",
-            "line": 454,
+            "line": 457,
             "description": "设置总队数",
             "itemtype": "method",
             "name": "setTotalNumber",
@@ -770,13 +805,17 @@
                     "type": "Number"
                 }
             ],
+            "return": {
+                "description": "总对数",
+                "type": "Number"
+            },
             "class": "fan1xia.model.Score.prototype",
-            "module": "CanvasModel",
+            "module": "canvasModel",
             "namespace": "fan1xia.model"
         },
         {
             "file": "model\\canvasModel.js",
-            "line": 468,
+            "line": 472,
             "description": "过去总对数",
             "itemtype": "method",
             "name": "getTotalNumber",
@@ -785,12 +824,12 @@
                 "type": "Number"
             },
             "class": "fan1xia.model.Score.prototype",
-            "module": "CanvasModel",
+            "module": "canvasModel",
             "namespace": "fan1xia.model"
         },
         {
             "file": "model\\canvasModel.js",
-            "line": 477,
+            "line": 481,
             "description": "设置还剩对少对",
             "itemtype": "method",
             "name": "setRemainNumber",
@@ -802,12 +841,12 @@
                 }
             ],
             "class": "fan1xia.model.Score.prototype",
-            "module": "CanvasModel",
+            "module": "canvasModel",
             "namespace": "fan1xia.model"
         },
         {
             "file": "model\\canvasModel.js",
-            "line": 487,
+            "line": 491,
             "description": "获取剩余对数",
             "itemtype": "method",
             "name": "getRemainNumber",
@@ -816,22 +855,22 @@
                 "type": "Number"
             },
             "class": "fan1xia.model.Score.prototype",
-            "module": "CanvasModel",
+            "module": "canvasModel",
             "namespace": "fan1xia.model"
         },
         {
             "file": "model\\canvasModel.js",
-            "line": 497,
+            "line": 501,
             "description": "剩余队数自减",
             "itemtype": "method",
             "name": "decreaseRemainNumber",
             "class": "fan1xia.model.Score.prototype",
-            "module": "CanvasModel",
+            "module": "canvasModel",
             "namespace": "fan1xia.model"
         },
         {
             "file": "model\\canvasModel.js",
-            "line": 515,
+            "line": 519,
             "description": "检查是否结束",
             "itemtype": "method",
             "name": "checkSuccess",
@@ -848,12 +887,12 @@
                 }
             ],
             "class": "fan1xia.model.Score.prototype",
-            "module": "CanvasModel",
+            "module": "canvasModel",
             "namespace": "fan1xia.model"
         },
         {
             "file": "model\\canvasModel.js",
-            "line": 524,
+            "line": 528,
             "description": "设置还剩对少对",
             "itemtype": "method",
             "name": "setClickCount",
@@ -865,12 +904,12 @@
                 }
             ],
             "class": "fan1xia.model.Score.prototype",
-            "module": "CanvasModel",
+            "module": "canvasModel",
             "namespace": "fan1xia.model"
         },
         {
             "file": "model\\canvasModel.js",
-            "line": 537,
+            "line": 541,
             "description": "获取点击次数",
             "itemtype": "method",
             "name": "getClickCount",
@@ -879,22 +918,22 @@
                 "type": "Number"
             },
             "class": "fan1xia.model.Score.prototype",
-            "module": "CanvasModel",
+            "module": "canvasModel",
             "namespace": "fan1xia.model"
         },
         {
             "file": "model\\canvasModel.js",
-            "line": 545,
+            "line": 549,
             "description": "增加点击次数",
             "itemtype": "method",
             "name": "addClickCount",
             "class": "fan1xia.model.Score.prototype",
-            "module": "CanvasModel",
+            "module": "canvasModel",
             "namespace": "fan1xia.model"
         },
         {
             "file": "model\\canvasModel.js",
-            "line": 552,
+            "line": 556,
             "description": "设置失败次数",
             "itemtype": "method",
             "name": "setErrorCount",
@@ -906,12 +945,12 @@
                 }
             ],
             "class": "fan1xia.model.Score.prototype",
-            "module": "CanvasModel",
+            "module": "canvasModel",
             "namespace": "fan1xia.model"
         },
         {
             "file": "model\\canvasModel.js",
-            "line": 565,
+            "line": 569,
             "description": "获取错误次数",
             "itemtype": "method",
             "name": "getErrorCount",
@@ -920,17 +959,17 @@
                 "type": "Number"
             },
             "class": "fan1xia.model.Score.prototype",
-            "module": "CanvasModel",
+            "module": "canvasModel",
             "namespace": "fan1xia.model"
         },
         {
             "file": "model\\canvasModel.js",
-            "line": 574,
+            "line": 578,
             "description": "添加错误数",
             "itemtype": "method",
             "name": "addErrorCount",
             "class": "fan1xia.model.Score.prototype",
-            "module": "CanvasModel",
+            "module": "canvasModel",
             "namespace": "fan1xia.model"
         },
         {
@@ -1104,6 +1143,89 @@
             "namespace": "fan1xia.model"
         },
         {
+            "file": "model\\storageModel.js",
+            "line": 18,
+            "description": "浏览器寸处对象",
+            "itemtype": "property",
+            "name": "storage",
+            "type": "Object",
+            "default": "null",
+            "class": "fan1xia.model.StorageModel",
+            "module": "storageModel",
+            "namespace": "fan1xia.model"
+        },
+        {
+            "file": "model\\storageModel.js",
+            "line": 33,
+            "description": "初始化",
+            "itemtype": "method",
+            "name": "init",
+            "class": "fan1xia.model.StorageModel.prototype",
+            "module": "storageModel",
+            "namespace": "fan1xia.model"
+        },
+        {
+            "file": "model\\storageModel.js",
+            "line": 52,
+            "description": "获取本地存储对象",
+            "itemtype": "method",
+            "name": "getStorage",
+            "return": {
+                "description": "本地存储对象",
+                "type": "Object"
+            },
+            "class": "fan1xia.model.StorageModel.prototype",
+            "module": "storageModel",
+            "namespace": "fan1xia.model"
+        },
+        {
+            "file": "model\\storageModel.js",
+            "line": 61,
+            "description": "存储对象",
+            "itemtype": "method",
+            "name": "save",
+            "params": [
+                {
+                    "name": "key",
+                    "description": "存的键",
+                    "type": "String"
+                },
+                {
+                    "name": "value",
+                    "description": "要存的值",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "存储是否成功",
+                "type": "Bollean"
+            },
+            "class": "fan1xia.model.StorageModel.prototype",
+            "module": "storageModel",
+            "namespace": "fan1xia.model"
+        },
+        {
+            "file": "model\\storageModel.js",
+            "line": 78,
+            "description": "载入值",
+            "itemtype": "method",
+            "name": "getStorage",
+            "params": [
+                {
+                    "name": "key",
+                    "description": "要去得的键",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "获取成功返回兼职，失败返回false",
+                "type": "Bollean|String"
+            },
+            "class": "fan1xia.model.StorageModel.prototype",
+            "module": "storageModel",
+            "namespace": "fan1xia.model"
+        },
+        {
             "file": "index.js",
             "line": 23,
             "description": "级别属性存储当前级别与系统级别的索引",
@@ -1112,7 +1234,7 @@
             "type": "Array",
             "default": "[]",
             "class": "fan1xia.Index",
-            "module": "Index",
+            "module": "index",
             "namespace": "fan1xia"
         },
         {
@@ -1122,7 +1244,7 @@
             "itemtype": "method",
             "name": "init",
             "class": "fan1xia.Index.prototype",
-            "module": "Index",
+            "module": "index",
             "namespace": "fan1xia"
         },
         {
@@ -1132,7 +1254,7 @@
             "itemtype": "event",
             "name": "bindClickEvent",
             "class": "fan1xia.Index.prototype",
-            "module": "Index",
+            "module": "index",
             "namespace": "fan1xia"
         },
         {
@@ -1142,7 +1264,7 @@
             "itemtype": "method",
             "name": "init",
             "class": "fan1xia.Success.prototype",
-            "module": "Index",
+            "module": "index",
             "namespace": "fan1xia"
         },
         {
@@ -1152,7 +1274,7 @@
             "itemtype": "method",
             "name": "success",
             "class": "fan1xia.Success.prototype",
-            "module": "Index",
+            "module": "index",
             "namespace": "fan1xia"
         },
         {
@@ -1162,7 +1284,7 @@
             "itemtype": "event",
             "name": "bindClickEvent",
             "class": "fan1xia.Success.prototype",
-            "module": "Index",
+            "module": "index",
             "namespace": "fan1xia"
         },
         {
@@ -1172,7 +1294,7 @@
             "itemtype": "method",
             "name": "init",
             "class": "fan1xia.Failed.prototype",
-            "module": "Index",
+            "module": "index",
             "namespace": "fan1xia"
         },
         {
@@ -1182,7 +1304,7 @@
             "itemtype": "method",
             "name": "fail",
             "class": "fan1xia.Failed.prototype",
-            "module": "Index",
+            "module": "index",
             "namespace": "fan1xia"
         },
         {
@@ -1192,30 +1314,7 @@
             "itemtype": "event",
             "name": "bindClickEvent",
             "class": "fan1xia.Failed.prototype",
-            "module": "Index",
-            "namespace": "fan1xia"
-        },
-        {
-            "file": "jquery-1.8.2.js",
-            "line": 3987,
-            "description": "Utility function for retrieving the text value of an array of DOM nodes",
-            "params": [
-                {
-                    "name": "elem",
-                    "description": "",
-                    "type": "Array|Element"
-                }
-            ],
-            "class": "",
-            "module": "Index",
-            "namespace": "fan1xia"
-        },
-        {
-            "file": "loading.js",
-            "line": 1,
-            "author": "yan",
-            "class": "",
-            "module": "Index",
+            "module": "index",
             "namespace": "fan1xia"
         }
     ],
@@ -1225,32 +1324,12 @@
             "line": " model\\canvasModel.js:1"
         },
         {
-            "message": "unknown tag: emthod",
-            "line": " model\\canvasModel.js:378"
-        },
-        {
             "message": "unknown tag: version",
             "line": " model\\imagesModel.js:1"
         },
         {
             "message": "unknown tag: version",
             "line": " index.js:1"
-        },
-        {
-            "message": "Missing item type\n更改路径",
-            "line": " model\\canvasModel.js:378"
-        },
-        {
-            "message": "Missing item type\n设置难度",
-            "line": " model\\canvasModel.js:443"
-        },
-        {
-            "message": "Missing item type\nUtility function for retrieving the text value of an array of DOM nodes",
-            "line": " jquery-1.8.2.js:3987"
-        },
-        {
-            "message": "Missing item type",
-            "line": " loading.js:1"
         }
     ]
 }
