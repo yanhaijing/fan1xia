@@ -1,32 +1,38 @@
 /** 
-* 工具面板的js
+* Index js主页js
 *
-* @module Fan1xia
-* @submodule Index
+* @module Index
+* @namespace fan1xia
+* @main Index
 * @author 颜海镜
 * @version 2012-09-29 15:20:04
 */
 (function($, window){
-	'use strict';
-	var Index = function(){},
-		Home = function(){},
-		Success = function(){},
-		Failed = function(){};
+    'use strict';
+	var Index,
+		Home,
+		Success,
+		Failed;
 	/**
-	* 翻一下类
+	* 主页类
 	* @class Index
 	* @constructor
-	* @extends window.fan1xia.Index.prototype
-	* @namespace window.fan1xia
+	* @extends fan1xia.Index.prototype	
 	*/
 	Index = function(){
+	    /**
+         * 级别属性存储当前级别与系统级别的索引
+         * @property levels
+         * @type Array
+         * @default []
+         */
 		this.levels = [];
 	};
 	
 	/**
-	* Fan1xia构造函数的原型对象
-	*
+	* Index构造函数的原型对象
 	* @class Index.prototype
+	* @static
 	*/
 	Index.prototype = {
 		/**
@@ -57,7 +63,8 @@
                 ];
 		},
 		/**
-		 * 
+		 * 绑定点击事件
+		 * @event bindClickEvent
 		 */
 		bindClickEvent:function(){
 			var that = this;
@@ -91,14 +98,28 @@
 		}
 	};
 	
+	/**
+    * 成功类
+    * @class Success
+    * @constructor
+    * @extends fan1xia.Success.prototype
+    */
+    Success = function(){
+    };
+    
+	/**
+    * 成功类原型
+    * @class Success.prototype
+    * @static
+    */
 	Success.prototype = {
+	    /**
+         * 初始化
+         * @method init 
+         */
 		init:function(){
 			this.bindClickEvent();
-		},
-		
-		reset:function(){
-			
-		},
+		},		
 		
 		/**
 		 * 胜利处理结果
@@ -167,6 +188,11 @@
 				});
 			}});
 		},
+		
+		/**
+         * 绑定点击事件
+         * @event bindClickEvent 
+         */
 		bindClickEvent:function(){
 			//绑定再试一次事件
 			var $success = $('#success');
@@ -210,18 +236,32 @@
 		}
 	};
 	
+	/**
+    * 失败类
+    * @class Failed
+    * @constructor
+    * @extends fan1xia.Failed.prototype
+    */
+    Failed = function(){
+    };
+    
+	/**
+    * 失败类原型
+    * @class Failed.prototype
+    * @static
+    */
 	Failed.prototype = {
+	    /**
+         * 初始化
+         * @method init 
+         */
 		init:function(){
 			this.bindClickEvent();
 		},
 		
-		reset:function(){
-			
-		},
-		
 		/**
-		 * 胜利处理结果
-		 * @method success 
+		 * 失败处理结果
+		 * @method fail 
 		 */
 		fail:function(){
 			//旋转出元素
@@ -234,6 +274,11 @@
 					});
 				}});
 		},
+		
+		/**
+         * 绑定点击事件
+         * @event bindClickEvent
+         */
 		bindClickEvent:function(){
 			//绑定再试一次事件
 			var $failed = $('#failed');

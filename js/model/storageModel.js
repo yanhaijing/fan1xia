@@ -1,13 +1,19 @@
 /**
  * 本地存储类
  * @author yan
- * @namespace model
- * @module Storage
+ * @namespace fan1xia.model
+ * @module storageModel
  */
 (function($, global){
     "use strict";
     
     var StorageModel = function(){
+        /**
+         * 浏览器寸处对象
+         * @property storage
+         * @type Object
+         * @default null
+         */
         this.storage = null;    
     };
         

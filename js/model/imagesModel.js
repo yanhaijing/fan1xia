@@ -1,8 +1,9 @@
 /** 
 * 图片组对象
 *
-* @module Fan1xia
-* @submodule Images
+* @module imagesModel
+* @namespace fan1xia.model
+* @main Images
 * @author 颜海镜
 * @version 2012-09-29 15:20:04
 */
@@ -13,10 +14,15 @@
 	* 图片类类
 	* @class Images
 	* @constructor
-	* @extends window.fan1xia.Images.prototype
-	* @namespace window.fan1xia
+	* @extends fan1xia.model.Images.prototype
 	*/
 	var Images = function(){
+	    /**
+	     * 图片名称数组
+	     * @property images
+	     * @type Array
+	     * @default [...]
+	     */
 		this.images = ['Alien1.bmp',
                 'Alien2.bmp',
                 'Balloon.bmp',
@@ -50,17 +56,34 @@
                 'elephant.gif',
                 'haitun.gif'
             ];
-            
+        
+        /**
+         * 图片路径数组
+         * @property imagesSrc
+         * @type Array
+         * @default []
+         */    
         this.imagesSrc = [];
+        
+        /**
+         * 图片对象数组
+         * @property imgs
+         * @type Array
+         * @default []
+         */
         this.imgs = [];
 	};
 	
 	/**
 	* Images构造函数的原型对象
-	*
 	* @class Images.prototype
+	* @static
 	*/
 	Images.prototype = {
+	    /**
+         * 初始化
+         * @method init 
+         */
 		init:function(){
 		      this.initImagesSrc();//初始化路径
 		      this.loadImages(this.getImagesSrc());
@@ -85,6 +108,11 @@
 			return imgSrc;
 		},
 		
+		/**
+         * 获取图片路径数组
+         * @method getImagesSrc
+         * @return {Array} 图片路径数组 
+         */
 		getImagesSrc:function(){
 		  return $.extend(true, [], this.imagesSrc);
 		},
@@ -110,6 +138,11 @@
 			return imgs;
 		},
 		
+		/**
+		 * 获取图片对象数组
+		 * @method getImageObjs
+		 * @return {Array} 图片对象数组
+		 */
 		getImageObjs:function(){
 		      return $.extend(true, [], this.imgs); 
 		},
@@ -243,14 +276,19 @@
 			return expendDoms;
 		},
 		
+		/**
+         * 获取随机获取的图像dom对象数组
+         * @method getImageObjs
+         * @return {Array} 随机获取的图像dom对象数组
+         */
 		getImages:function(count, grad){
-    		var 
-    		        results = [],
-                    imageObjs = [],
-                    imageDoms = [],
-                    num = count / grad,
-                    expendDoms = [],
-                    randomDoms = [];
+		    var 
+		          results = [],
+                  imageObjs = [],
+                  imageDoms = [],
+                  num = count / grad,
+                  expendDoms = [],
+                  randomDoms = [];
             //载入image对象
             imageObjs = this.getImageObjs();
             //创建doms对象
