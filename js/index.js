@@ -10,7 +10,6 @@
 (function($, window){
     'use strict';
 	var Index,
-		Home,
 		Success,
 		Failed;
 	/**
