@@ -1,32 +1,37 @@
 /** 
-* 工具面板的js
+* Index js主页js
 *
-* @module Fan1xia
-* @submodule Index
+* @module index
+* @main index
+* @namespace fan1xia
 * @author 颜海镜
 * @version 2012-09-29 15:20:04
 */
 (function($, window){
-	'use strict';
-	var Index = function(){},
-		Home = function(){},
-		Success = function(){},
-		Failed = function(){};
+    'use strict';
+	var Index,
+		Success,
+		Failed;
 	/**
-	* 翻一下类
+	* 主页类
 	* @class Index
 	* @constructor
-	* @extends window.fan1xia.Index.prototype
-	* @namespace window.fan1xia
+	* @extends fan1xia.Index.prototype	
 	*/
 	Index = function(){
+	    /**
+         * 级别属性存储当前级别与系统级别的索引
+         * @property levels
+         * @type Array
+         * @default []
+         */
 		this.levels = [];
 	};
 	
 	/**
-	* Fan1xia构造函数的原型对象
-	*
+	* Index构造函数的原型对象
 	* @class Index.prototype
+	* @static
 	*/
 	Index.prototype = {
 		/**
@@ -57,7 +62,8 @@
                 ];
 		},
 		/**
-		 * 
+		 * 绑定点击事件
+		 * @event bindClickEvent
 		 */
 		bindClickEvent:function(){
 			var that = this;
@@ -91,14 +97,28 @@
 		}
 	};
 	
+	/**
+    * 成功类
+    * @class Success
+    * @constructor
+    * @extends fan1xia.Success.prototype
+    */
+    Success = function(){
+    };
+    
+	/**
+    * 成功类原型
+    * @class Success.prototype
+    * @static
+    */
 	Success.prototype = {
+	    /**
+         * 初始化
+         * @method init 
+         */
 		init:function(){
 			this.bindClickEvent();
-		},
-		
-		reset:function(){
-			
-		},
+		},		
 		
 		/**
 		 * 胜利处理结果
@@ -141,7 +161,7 @@
 		    (function(){
                 var p = {
                     url:location.href, /*获取URL，可加上来自分享到QQ标识，方便统计*/
-                    desc:'哈哈！！！我在难度' + level + '中，得了' + scoreNum + '分，您是否能找到板上所有的匹配？翻转一块墙砖会显示一张图片，然后尝试在其他地方找到其匹配。记住图片的位置，因为如果翻转的墙砖上的图片不匹配，您将必须重试。匹配所有图片才能获胜。', /*分享理由(风格应模拟用户对话),支持多分享语随机展现（使用|分隔）*/
+                    desc:'哈哈！！！我在难度' + level+1 + '中，得了' + scoreNum + '分，您是否能找到板上所有的匹配？翻转一块墙砖会显示一张图片，然后尝试在其他地方找到其匹配。记住图片的位置，因为如果翻转的墙砖上的图片不匹配，您将必须重试。匹配所有图片才能获胜。', /*分享理由(风格应模拟用户对话),支持多分享语随机展现（使用|分隔）*/
                     title:'翻一下', /*分享标题(可选)*/
                     summary:'翻一下是一款类似小丑配对的游戏，能增加记忆力', /*分享摘要(可选)*/
                     pics:'http://yanhaijing.github.io/fan1xia/images/fan.gif', /*分享图片(可选)*/
@@ -167,6 +187,11 @@
 				});
 			}});
 		},
+		
+		/**
+         * 绑定点击事件
+         * @event bindClickEvent 
+         */
 		bindClickEvent:function(){
 			//绑定再试一次事件
 			var $success = $('#success');
@@ -210,18 +235,32 @@
 		}
 	};
 	
+	/**
+    * 失败类
+    * @class Failed
+    * @constructor
+    * @extends fan1xia.Failed.prototype
+    */
+    Failed = function(){
+    };
+    
+	/**
+    * 失败类原型
+    * @class Failed.prototype
+    * @static
+    */
 	Failed.prototype = {
+	    /**
+         * 初始化
+         * @method init 
+         */
 		init:function(){
 			this.bindClickEvent();
 		},
 		
-		reset:function(){
-			
-		},
-		
 		/**
-		 * 胜利处理结果
-		 * @method success 
+		 * 失败处理结果
+		 * @method fail 
 		 */
 		fail:function(){
 			//旋转出元素
@@ -234,6 +273,11 @@
 					});
 				}});
 		},
+		
+		/**
+         * 绑定点击事件
+         * @event bindClickEvent
+         */
 		bindClickEvent:function(){
 			//绑定再试一次事件
 			var $failed = $('#failed');

@@ -1,0 +1,1335 @@
+{
+    "project": {},
+    "files": {
+        "model\\canvasModel.js": {
+            "name": "model\\canvasModel.js",
+            "modules": {
+                "canvasModel": 1
+            },
+            "classes": {
+                "fan1xia.model.Canvas": 1,
+                "fan1xia.model.Canvas.prototype": 1,
+                "fan1xia.model.Timer": 1,
+                "fan1xia.model.Timer.prototype": 1,
+                "fan1xia.model.Store": 1,
+                "fan1xia.model.Store.prototype": 1,
+                "fan1xia.model.Score": 1,
+                "fan1xia.model.Score.prototype": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "fan1xia.model": 1
+            }
+        },
+        "model\\imagesModel.js": {
+            "name": "model\\imagesModel.js",
+            "modules": {
+                "imagesModel": 1
+            },
+            "classes": {
+                "fan1xia.model.Images": 1,
+                "fan1xia.model.Images.prototype": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "fan1xia.model": 1
+            }
+        },
+        "model\\storageModel.js": {
+            "name": "model\\storageModel.js",
+            "modules": {
+                "storageModel": 1
+            },
+            "classes": {
+                "fan1xia.model.StorageModel": 1,
+                "fan1xia.model.StorageModel.prototype": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "fan1xia.model": 1
+            }
+        },
+        "index.js": {
+            "name": "index.js",
+            "modules": {
+                "index": 1
+            },
+            "classes": {
+                "fan1xia.Index": 1,
+                "fan1xia.Index.prototype": 1,
+                "fan1xia.Success": 1,
+                "fan1xia.Success.prototype": 1,
+                "fan1xia.Failed": 1,
+                "fan1xia.Failed.prototype": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "fan1xia": 1
+            }
+        }
+    },
+    "modules": {
+        "canvasModel": {
+            "name": "canvasModel",
+            "submodules": {},
+            "classes": {
+                "fan1xia.model.Canvas": 1,
+                "fan1xia.model.Canvas.prototype": 1,
+                "fan1xia.model.Timer": 1,
+                "fan1xia.model.Timer.prototype": 1,
+                "fan1xia.model.Store": 1,
+                "fan1xia.model.Store.prototype": 1,
+                "fan1xia.model.Score": 1,
+                "fan1xia.model.Score.prototype": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "fan1xia.model": 1
+            },
+            "tag": "main",
+            "file": "model\\canvasModel.js",
+            "line": 420,
+            "description": "画布对象",
+            "itemtype": "main"
+        },
+        "imagesModel": {
+            "name": "imagesModel",
+            "submodules": {},
+            "classes": {
+                "fan1xia.model.Images": 1,
+                "fan1xia.model.Images.prototype": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "fan1xia.model": 1
+            },
+            "tag": "main",
+            "file": "model\\imagesModel.js",
+            "line": 77,
+            "description": "图片组对象",
+            "itemtype": "main"
+        },
+        "storageModel": {
+            "name": "storageModel",
+            "submodules": {},
+            "classes": {
+                "fan1xia.model.StorageModel": 1,
+                "fan1xia.model.StorageModel.prototype": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "fan1xia.model": 1
+            },
+            "tag": "main",
+            "file": "model\\storageModel.js",
+            "line": 27,
+            "description": "本地存储类",
+            "author": "yan",
+            "itemtype": "main"
+        },
+        "index": {
+            "name": "index",
+            "submodules": {},
+            "classes": {
+                "fan1xia.Index": 1,
+                "fan1xia.Index.prototype": 1,
+                "fan1xia.Success": 1,
+                "fan1xia.Success.prototype": 1,
+                "fan1xia.Failed": 1,
+                "fan1xia.Failed.prototype": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "fan1xia": 1
+            },
+            "tag": "main",
+            "file": "index.js",
+            "line": 248,
+            "description": "Index js主页js",
+            "itemtype": "main"
+        }
+    },
+    "classes": {
+        "fan1xia.model.Canvas": {
+            "name": "fan1xia.model.Canvas",
+            "shortname": "Canvas",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "canvasModel",
+            "namespace": "fan1xia.model",
+            "file": "model\\canvasModel.js",
+            "line": 16,
+            "description": "画布类",
+            "is_constructor": 1,
+            "extends": "fan1xia.model.Canvas.prototype"
+        },
+        "fan1xia.model.Canvas.prototype": {
+            "name": "fan1xia.model.Canvas.prototype",
+            "shortname": "Canvas.prototype",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "canvasModel",
+            "namespace": "fan1xia.model",
+            "file": "model\\canvasModel.js",
+            "line": 64,
+            "description": "Canvas构造函数的原型对象",
+            "static": 1
+        },
+        "fan1xia.model.Timer": {
+            "name": "fan1xia.model.Timer",
+            "shortname": "Timer",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "canvasModel",
+            "namespace": "fan1xia.model",
+            "file": "model\\canvasModel.js",
+            "line": 292,
+            "description": "时间类",
+            "is_constructor": 1,
+            "extends": "fan1xia.model.Timer.prototype"
+        },
+        "fan1xia.model.Timer.prototype": {
+            "name": "fan1xia.model.Timer.prototype",
+            "shortname": "Timer.prototype",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "canvasModel",
+            "namespace": "fan1xia.model",
+            "file": "model\\canvasModel.js",
+            "line": 300,
+            "description": "Timer构造函数的原型对象",
+            "static": 1
+        },
+        "fan1xia.model.Store": {
+            "name": "fan1xia.model.Store",
+            "shortname": "Store",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "canvasModel",
+            "namespace": "fan1xia.model",
+            "file": "model\\canvasModel.js",
+            "line": 344,
+            "description": "存贮罐类",
+            "is_constructor": 1,
+            "extends": "fan1xia.model.Store.prototype"
+        },
+        "fan1xia.model.Store.prototype": {
+            "name": "fan1xia.model.Store.prototype",
+            "shortname": "Store.prototype",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "canvasModel",
+            "namespace": "fan1xia.model",
+            "file": "model\\canvasModel.js",
+            "line": 352,
+            "description": "Store构造函数的原型对象",
+            "static": 1
+        },
+        "fan1xia.model.Score": {
+            "name": "fan1xia.model.Score",
+            "shortname": "Score",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "canvasModel",
+            "namespace": "fan1xia.model",
+            "file": "model\\canvasModel.js",
+            "line": 388,
+            "description": "存贮罐类",
+            "is_constructor": 1,
+            "extends": "fan1xia.model.Score.prototype"
+        },
+        "fan1xia.model.Score.prototype": {
+            "name": "fan1xia.model.Score.prototype",
+            "shortname": "Score.prototype",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "canvasModel",
+            "namespace": "fan1xia.model",
+            "file": "model\\canvasModel.js",
+            "line": 420,
+            "description": "Score构造函数的原型对象",
+            "static": 1
+        },
+        "fan1xia.model.Images": {
+            "name": "fan1xia.model.Images",
+            "shortname": "Images",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "imagesModel",
+            "namespace": "fan1xia.model",
+            "file": "model\\imagesModel.js",
+            "line": 13,
+            "description": "图片类类",
+            "is_constructor": 1,
+            "extends": "fan1xia.model.Images.prototype"
+        },
+        "fan1xia.model.Images.prototype": {
+            "name": "fan1xia.model.Images.prototype",
+            "shortname": "Images.prototype",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "imagesModel",
+            "namespace": "fan1xia.model",
+            "file": "model\\imagesModel.js",
+            "line": 77,
+            "description": "Images构造函数的原型对象",
+            "static": 1
+        },
+        "fan1xia.model.StorageModel": {
+            "name": "fan1xia.model.StorageModel",
+            "shortname": "StorageModel",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "storageModel",
+            "namespace": "fan1xia.model",
+            "file": "model\\storageModel.js",
+            "line": 11,
+            "description": "本地存储类",
+            "is_constructor": 1,
+            "extends": "fan1xia.model.StorageModel.prototype"
+        },
+        "fan1xia.model.StorageModel.prototype": {
+            "name": "fan1xia.model.StorageModel.prototype",
+            "shortname": "StorageModel.prototype",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "storageModel",
+            "namespace": "fan1xia.model",
+            "file": "model\\storageModel.js",
+            "line": 27,
+            "description": "本地存储类原型对象",
+            "static": 1
+        },
+        "fan1xia.Index": {
+            "name": "fan1xia.Index",
+            "shortname": "Index",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "index",
+            "namespace": "fan1xia",
+            "file": "index.js",
+            "line": 16,
+            "description": "主页类",
+            "is_constructor": 1,
+            "extends": "fan1xia.Index.prototype"
+        },
+        "fan1xia.Index.prototype": {
+            "name": "fan1xia.Index.prototype",
+            "shortname": "Index.prototype",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "index",
+            "namespace": "fan1xia",
+            "file": "index.js",
+            "line": 32,
+            "description": "Index构造函数的原型对象",
+            "static": 1
+        },
+        "fan1xia.Success": {
+            "name": "fan1xia.Success",
+            "shortname": "Success",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "index",
+            "namespace": "fan1xia",
+            "file": "index.js",
+            "line": 101,
+            "description": "成功类",
+            "is_constructor": 1,
+            "extends": "fan1xia.Success.prototype"
+        },
+        "fan1xia.Success.prototype": {
+            "name": "fan1xia.Success.prototype",
+            "shortname": "Success.prototype",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "index",
+            "namespace": "fan1xia",
+            "file": "index.js",
+            "line": 110,
+            "description": "成功类原型",
+            "static": 1
+        },
+        "fan1xia.Failed": {
+            "name": "fan1xia.Failed",
+            "shortname": "Failed",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "index",
+            "namespace": "fan1xia",
+            "file": "index.js",
+            "line": 239,
+            "description": "失败类",
+            "is_constructor": 1,
+            "extends": "fan1xia.Failed.prototype"
+        },
+        "fan1xia.Failed.prototype": {
+            "name": "fan1xia.Failed.prototype",
+            "shortname": "Failed.prototype",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "index",
+            "namespace": "fan1xia",
+            "file": "index.js",
+            "line": 248,
+            "description": "失败类原型",
+            "static": 1
+        }
+    },
+    "classitems": [
+        {
+            "file": "model\\canvasModel.js",
+            "line": 23,
+            "description": "时间对象",
+            "itemtype": "property",
+            "name": "timer",
+            "type": "Object",
+            "default": "null",
+            "class": "fan1xia.model.Canvas",
+            "module": "canvasModel",
+            "namespace": "fan1xia.model"
+        },
+        {
+            "file": "model\\canvasModel.js",
+            "line": 31,
+            "description": "分数对象",
+            "itemtype": "property",
+            "name": "score",
+            "type": "Object",
+            "default": "null",
+            "class": "fan1xia.model.Canvas",
+            "module": "canvasModel",
+            "namespace": "fan1xia.model"
+        },
+        {
+            "file": "model\\canvasModel.js",
+            "line": 39,
+            "description": "存数对象",
+            "itemtype": "property",
+            "name": "store",
+            "type": "Object",
+            "default": "null",
+            "class": "fan1xia.model.Canvas",
+            "module": "canvasModel",
+            "namespace": "fan1xia.model"
+        },
+        {
+            "file": "model\\canvasModel.js",
+            "line": 47,
+            "description": "图片对象",
+            "itemtype": "property",
+            "name": "images",
+            "type": "Object",
+            "default": "null",
+            "class": "fan1xia.model.Canvas",
+            "module": "canvasModel",
+            "namespace": "fan1xia.model"
+        },
+        {
+            "file": "model\\canvasModel.js",
+            "line": 55,
+            "description": "声音对象",
+            "itemtype": "property",
+            "name": "sound",
+            "type": "Object",
+            "default": "null",
+            "class": "fan1xia.model.Canvas",
+            "module": "canvasModel",
+            "namespace": "fan1xia.model"
+        },
+        {
+            "file": "model\\canvasModel.js",
+            "line": 70,
+            "description": "初始化",
+            "itemtype": "method",
+            "name": "init",
+            "class": "fan1xia.model.Canvas.prototype",
+            "module": "canvasModel",
+            "namespace": "fan1xia.model"
+        },
+        {
+            "file": "model\\canvasModel.js",
+            "line": 88,
+            "description": "刷新画布元素",
+            "itemtype": "method",
+            "name": "refresh",
+            "params": [
+                {
+                    "name": "level游戏的级别",
+                    "description": "",
+                    "type": "Number"
+                },
+                {
+                    "name": "grad",
+                    "description": "游戏单个图象重复的次数",
+                    "type": "Number"
+                }
+            ],
+            "class": "fan1xia.model.Canvas.prototype",
+            "module": "canvasModel",
+            "namespace": "fan1xia.model"
+        },
+        {
+            "file": "model\\canvasModel.js",
+            "line": 122,
+            "description": "构造html",
+            "itemtype": "method",
+            "name": "createHtml",
+            "params": [
+                {
+                    "name": "imgDoms",
+                    "description": "图象dom数组元素",
+                    "type": "Array"
+                },
+                {
+                    "name": "level",
+                    "description": "级别",
+                    "type": "Number"
+                }
+            ],
+            "class": "fan1xia.model.Canvas.prototype",
+            "module": "canvasModel",
+            "namespace": "fan1xia.model"
+        },
+        {
+            "file": "model\\canvasModel.js",
+            "line": 150,
+            "description": "初始化画布元素",
+            "itemtype": "method",
+            "name": "initCanvas",
+            "params": [
+                {
+                    "name": "imgDoms",
+                    "description": "",
+                    "type": "Array"
+                }
+            ],
+            "class": "fan1xia.model.Canvas.prototype",
+            "module": "canvasModel",
+            "namespace": "fan1xia.model"
+        },
+        {
+            "file": "model\\canvasModel.js",
+            "line": 158,
+            "description": "重置画布",
+            "itemtype": "method",
+            "name": "reset",
+            "class": "fan1xia.model.Canvas.prototype",
+            "module": "canvasModel",
+            "namespace": "fan1xia.model"
+        },
+        {
+            "file": "model\\canvasModel.js",
+            "line": 174,
+            "description": "绑定单击事件",
+            "itemtype": "event",
+            "name": "bindClickEvent",
+            "class": "fan1xia.model.Canvas.prototype",
+            "module": "canvasModel",
+            "namespace": "fan1xia.model"
+        },
+        {
+            "file": "model\\canvasModel.js",
+            "line": 262,
+            "description": "顺时针旋转180度元素",
+            "itemtype": "method",
+            "name": "clockRotate180",
+            "params": [
+                {
+                    "name": "$obj",
+                    "description": "旋转的元素",
+                    "type": "$object"
+                },
+                {
+                    "name": "callback",
+                    "description": "回调函数",
+                    "type": "Function"
+                }
+            ],
+            "class": "fan1xia.model.Canvas.prototype",
+            "module": "canvasModel",
+            "namespace": "fan1xia.model"
+        },
+        {
+            "file": "model\\canvasModel.js",
+            "line": 276,
+            "description": "逆时针时针旋转180度元素",
+            "itemtype": "method",
+            "name": "unclockRotate180",
+            "params": [
+                {
+                    "name": "$obj",
+                    "description": "旋转的元素",
+                    "type": "$object"
+                },
+                {
+                    "name": "callback",
+                    "description": "回调函数",
+                    "type": "Function"
+                }
+            ],
+            "class": "fan1xia.model.Canvas.prototype",
+            "module": "canvasModel",
+            "namespace": "fan1xia.model"
+        },
+        {
+            "file": "model\\canvasModel.js",
+            "line": 306,
+            "description": "初始化",
+            "itemtype": "method",
+            "name": "init",
+            "class": "fan1xia.model.Timer.prototype",
+            "module": "canvasModel",
+            "namespace": "fan1xia.model"
+        },
+        {
+            "file": "model\\canvasModel.js",
+            "line": 321,
+            "description": "复原计时器为零",
+            "itemtype": "method",
+            "name": "reset",
+            "class": "fan1xia.model.Timer.prototype",
+            "module": "canvasModel",
+            "namespace": "fan1xia.model"
+        },
+        {
+            "file": "model\\canvasModel.js",
+            "line": 329,
+            "itemtype": "method",
+            "name": "setTimer",
+            "params": [
+                {
+                    "name": "stamp",
+                    "description": "时间戳",
+                    "type": "Number"
+                },
+                {
+                    "name": "callback",
+                    "description": "回调函数",
+                    "type": "Function"
+                }
+            ],
+            "class": "fan1xia.model.Timer.prototype",
+            "module": "canvasModel",
+            "namespace": "fan1xia.model"
+        },
+        {
+            "file": "model\\canvasModel.js",
+            "line": 358,
+            "description": "重置",
+            "itemtype": "method",
+            "name": "reset",
+            "params": [
+                {
+                    "name": "src",
+                    "description": "路径",
+                    "type": "String"
+                }
+            ],
+            "class": "fan1xia.model.Store.prototype",
+            "module": "canvasModel",
+            "namespace": "fan1xia.model"
+        },
+        {
+            "file": "model\\canvasModel.js",
+            "line": 368,
+            "description": "放入东西",
+            "itemtype": "method",
+            "name": "pull",
+            "params": [
+                {
+                    "name": "src",
+                    "description": "路径",
+                    "type": "String"
+                }
+            ],
+            "class": "fan1xia.model.Store.prototype",
+            "module": "canvasModel",
+            "namespace": "fan1xia.model"
+        },
+        {
+            "file": "model\\canvasModel.js",
+            "line": 378,
+            "description": "更改路径",
+            "itemtype": "method",
+            "name": "src",
+            "params": [
+                {
+                    "name": "src",
+                    "description": "路径",
+                    "type": "String"
+                }
+            ],
+            "class": "fan1xia.model.Store.prototype",
+            "module": "canvasModel",
+            "namespace": "fan1xia.model"
+        },
+        {
+            "file": "model\\canvasModel.js",
+            "line": 395,
+            "description": "总对数",
+            "itemtype": "property",
+            "name": "totalPairs",
+            "type": "Number",
+            "default": "0",
+            "class": "fan1xia.model.Score",
+            "module": "canvasModel",
+            "namespace": "fan1xia.model"
+        },
+        {
+            "file": "model\\canvasModel.js",
+            "line": 403,
+            "description": "点击次数",
+            "itemtype": "property",
+            "name": "clickCount",
+            "type": "Number",
+            "default": "0",
+            "class": "fan1xia.model.Score",
+            "module": "canvasModel",
+            "namespace": "fan1xia.model"
+        },
+        {
+            "file": "model\\canvasModel.js",
+            "line": 411,
+            "description": "错误次数",
+            "itemtype": "property",
+            "name": "errorCount",
+            "type": "Number",
+            "default": "0",
+            "class": "fan1xia.model.Score",
+            "module": "canvasModel",
+            "namespace": "fan1xia.model"
+        },
+        {
+            "file": "model\\canvasModel.js",
+            "line": 426,
+            "description": "重置",
+            "itemtype": "method",
+            "name": "reset",
+            "params": [
+                {
+                    "name": "level",
+                    "description": "级别",
+                    "type": "Number|undefined"
+                }
+            ],
+            "class": "fan1xia.model.Score.prototype",
+            "module": "canvasModel",
+            "namespace": "fan1xia.model"
+        },
+        {
+            "file": "model\\canvasModel.js",
+            "line": 443,
+            "description": "设置难度",
+            "itemtype": "method",
+            "name": "setLevel",
+            "params": [
+                {
+                    "name": "level",
+                    "description": "要设置的难度",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "设置的难度",
+                "type": "Number"
+            },
+            "class": "fan1xia.model.Score.prototype",
+            "module": "canvasModel",
+            "namespace": "fan1xia.model"
+        },
+        {
+            "file": "model\\canvasModel.js",
+            "line": 457,
+            "description": "设置总队数",
+            "itemtype": "method",
+            "name": "setTotalNumber",
+            "params": [
+                {
+                    "name": "total",
+                    "description": "总队数",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "总对数",
+                "type": "Number"
+            },
+            "class": "fan1xia.model.Score.prototype",
+            "module": "canvasModel",
+            "namespace": "fan1xia.model"
+        },
+        {
+            "file": "model\\canvasModel.js",
+            "line": 472,
+            "description": "过去总对数",
+            "itemtype": "method",
+            "name": "getTotalNumber",
+            "return": {
+                "description": "总队数",
+                "type": "Number"
+            },
+            "class": "fan1xia.model.Score.prototype",
+            "module": "canvasModel",
+            "namespace": "fan1xia.model"
+        },
+        {
+            "file": "model\\canvasModel.js",
+            "line": 481,
+            "description": "设置还剩对少对",
+            "itemtype": "method",
+            "name": "setRemainNumber",
+            "params": [
+                {
+                    "name": "remain",
+                    "description": "剩余队数",
+                    "type": "Number|undefined"
+                }
+            ],
+            "class": "fan1xia.model.Score.prototype",
+            "module": "canvasModel",
+            "namespace": "fan1xia.model"
+        },
+        {
+            "file": "model\\canvasModel.js",
+            "line": 491,
+            "description": "获取剩余对数",
+            "itemtype": "method",
+            "name": "getRemainNumber",
+            "return": {
+                "description": "count 当前还剩余队数",
+                "type": "Number"
+            },
+            "class": "fan1xia.model.Score.prototype",
+            "module": "canvasModel",
+            "namespace": "fan1xia.model"
+        },
+        {
+            "file": "model\\canvasModel.js",
+            "line": 501,
+            "description": "剩余队数自减",
+            "itemtype": "method",
+            "name": "decreaseRemainNumber",
+            "class": "fan1xia.model.Score.prototype",
+            "module": "canvasModel",
+            "namespace": "fan1xia.model"
+        },
+        {
+            "file": "model\\canvasModel.js",
+            "line": 519,
+            "description": "检查是否结束",
+            "itemtype": "method",
+            "name": "checkSuccess",
+            "params": [
+                {
+                    "name": "count",
+                    "description": "数量",
+                    "type": "Number"
+                },
+                {
+                    "name": "success",
+                    "description": "是否成功",
+                    "type": "Bollean"
+                }
+            ],
+            "class": "fan1xia.model.Score.prototype",
+            "module": "canvasModel",
+            "namespace": "fan1xia.model"
+        },
+        {
+            "file": "model\\canvasModel.js",
+            "line": 528,
+            "description": "设置还剩对少对",
+            "itemtype": "method",
+            "name": "setClickCount",
+            "params": [
+                {
+                    "name": "count",
+                    "description": "剩余队数",
+                    "type": "Number|undefined"
+                }
+            ],
+            "class": "fan1xia.model.Score.prototype",
+            "module": "canvasModel",
+            "namespace": "fan1xia.model"
+        },
+        {
+            "file": "model\\canvasModel.js",
+            "line": 541,
+            "description": "获取点击次数",
+            "itemtype": "method",
+            "name": "getClickCount",
+            "return": {
+                "description": "count 点击次数",
+                "type": "Number"
+            },
+            "class": "fan1xia.model.Score.prototype",
+            "module": "canvasModel",
+            "namespace": "fan1xia.model"
+        },
+        {
+            "file": "model\\canvasModel.js",
+            "line": 549,
+            "description": "增加点击次数",
+            "itemtype": "method",
+            "name": "addClickCount",
+            "class": "fan1xia.model.Score.prototype",
+            "module": "canvasModel",
+            "namespace": "fan1xia.model"
+        },
+        {
+            "file": "model\\canvasModel.js",
+            "line": 556,
+            "description": "设置失败次数",
+            "itemtype": "method",
+            "name": "setErrorCount",
+            "params": [
+                {
+                    "name": "count",
+                    "description": "剩余队数",
+                    "type": "Number|undefined"
+                }
+            ],
+            "class": "fan1xia.model.Score.prototype",
+            "module": "canvasModel",
+            "namespace": "fan1xia.model"
+        },
+        {
+            "file": "model\\canvasModel.js",
+            "line": 569,
+            "description": "获取错误次数",
+            "itemtype": "method",
+            "name": "getErrorCount",
+            "return": {
+                "description": "count 错误次数",
+                "type": "Number"
+            },
+            "class": "fan1xia.model.Score.prototype",
+            "module": "canvasModel",
+            "namespace": "fan1xia.model"
+        },
+        {
+            "file": "model\\canvasModel.js",
+            "line": 578,
+            "description": "添加错误数",
+            "itemtype": "method",
+            "name": "addErrorCount",
+            "class": "fan1xia.model.Score.prototype",
+            "module": "canvasModel",
+            "namespace": "fan1xia.model"
+        },
+        {
+            "file": "model\\imagesModel.js",
+            "line": 20,
+            "description": "图片名称数组",
+            "itemtype": "property",
+            "name": "images",
+            "type": "Array",
+            "default": "[...]",
+            "class": "fan1xia.model.Images",
+            "module": "imagesModel",
+            "namespace": "fan1xia.model"
+        },
+        {
+            "file": "model\\imagesModel.js",
+            "line": 60,
+            "description": "图片路径数组",
+            "itemtype": "property",
+            "name": "imagesSrc",
+            "type": "Array",
+            "default": "[]",
+            "class": "fan1xia.model.Images",
+            "module": "imagesModel",
+            "namespace": "fan1xia.model"
+        },
+        {
+            "file": "model\\imagesModel.js",
+            "line": 68,
+            "description": "图片对象数组",
+            "itemtype": "property",
+            "name": "imgs",
+            "type": "Array",
+            "default": "[]",
+            "class": "fan1xia.model.Images",
+            "module": "imagesModel",
+            "namespace": "fan1xia.model"
+        },
+        {
+            "file": "model\\imagesModel.js",
+            "line": 83,
+            "description": "初始化",
+            "itemtype": "method",
+            "name": "init",
+            "class": "fan1xia.model.Images.prototype",
+            "module": "imagesModel",
+            "namespace": "fan1xia.model"
+        },
+        {
+            "file": "model\\imagesModel.js",
+            "line": 91,
+            "description": "初始化图象的路径",
+            "itemtype": "method",
+            "name": "initImagesSrc",
+            "return": {
+                "description": "imgSrc 初始化完的图片路径数组",
+                "type": "Array"
+            },
+            "class": "fan1xia.model.Images.prototype",
+            "module": "imagesModel",
+            "namespace": "fan1xia.model"
+        },
+        {
+            "file": "model\\imagesModel.js",
+            "line": 111,
+            "description": "获取图片路径数组",
+            "itemtype": "method",
+            "name": "getImagesSrc",
+            "return": {
+                "description": "图片路径数组",
+                "type": "Array"
+            },
+            "class": "fan1xia.model.Images.prototype",
+            "module": "imagesModel",
+            "namespace": "fan1xia.model"
+        },
+        {
+            "file": "model\\imagesModel.js",
+            "line": 120,
+            "description": "载入图片对象",
+            "itemtype": "method",
+            "name": "loadImages",
+            "params": [
+                {
+                    "name": "imgSrcs",
+                    "description": "图片路径数组",
+                    "type": "Array"
+                }
+            ],
+            "return": {
+                "description": "imgs 图片对象",
+                "type": "Array"
+            },
+            "class": "fan1xia.model.Images.prototype",
+            "module": "imagesModel",
+            "namespace": "fan1xia.model"
+        },
+        {
+            "file": "model\\imagesModel.js",
+            "line": 141,
+            "description": "获取图片对象数组",
+            "itemtype": "method",
+            "name": "getImageObjs",
+            "return": {
+                "description": "图片对象数组",
+                "type": "Array"
+            },
+            "class": "fan1xia.model.Images.prototype",
+            "module": "imagesModel",
+            "namespace": "fan1xia.model"
+        },
+        {
+            "file": "model\\imagesModel.js",
+            "line": 170,
+            "description": "随即生成函数",
+            "itemtype": "method",
+            "name": "randowmImages",
+            "params": [
+                {
+                    "name": "num",
+                    "description": "生成的数量",
+                    "type": "Number"
+                },
+                {
+                    "name": "imagesDom",
+                    "description": "图片dom数组",
+                    "type": "Array"
+                }
+            ],
+            "return": {
+                "description": "images 生成的数组",
+                "type": "Array"
+            },
+            "class": "fan1xia.model.Images.prototype",
+            "module": "imagesModel",
+            "namespace": "fan1xia.model"
+        },
+        {
+            "file": "model\\imagesModel.js",
+            "line": 221,
+            "description": "扩展images数组",
+            "itemtype": "method",
+            "name": "expendImages",
+            "params": [
+                {
+                    "name": "grad",
+                    "description": "梯度",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "results 返回的结果数组",
+                "type": "Array"
+            },
+            "class": "fan1xia.model.Images.prototype",
+            "module": "imagesModel",
+            "namespace": "fan1xia.model"
+        },
+        {
+            "file": "model\\imagesModel.js",
+            "line": 279,
+            "description": "获取随机获取的图像dom对象数组",
+            "itemtype": "method",
+            "name": "getImageObjs",
+            "return": {
+                "description": "随机获取的图像dom对象数组",
+                "type": "Array"
+            },
+            "class": "fan1xia.model.Images.prototype",
+            "module": "imagesModel",
+            "namespace": "fan1xia.model"
+        },
+        {
+            "file": "model\\storageModel.js",
+            "line": 18,
+            "description": "浏览器寸处对象",
+            "itemtype": "property",
+            "name": "storage",
+            "type": "Object",
+            "default": "null",
+            "class": "fan1xia.model.StorageModel",
+            "module": "storageModel",
+            "namespace": "fan1xia.model"
+        },
+        {
+            "file": "model\\storageModel.js",
+            "line": 33,
+            "description": "初始化",
+            "itemtype": "method",
+            "name": "init",
+            "class": "fan1xia.model.StorageModel.prototype",
+            "module": "storageModel",
+            "namespace": "fan1xia.model"
+        },
+        {
+            "file": "model\\storageModel.js",
+            "line": 52,
+            "description": "获取本地存储对象",
+            "itemtype": "method",
+            "name": "getStorage",
+            "return": {
+                "description": "本地存储对象",
+                "type": "Object"
+            },
+            "class": "fan1xia.model.StorageModel.prototype",
+            "module": "storageModel",
+            "namespace": "fan1xia.model"
+        },
+        {
+            "file": "model\\storageModel.js",
+            "line": 61,
+            "description": "存储对象",
+            "itemtype": "method",
+            "name": "save",
+            "params": [
+                {
+                    "name": "key",
+                    "description": "存的键",
+                    "type": "String"
+                },
+                {
+                    "name": "value",
+                    "description": "要存的值",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "存储是否成功",
+                "type": "Bollean"
+            },
+            "class": "fan1xia.model.StorageModel.prototype",
+            "module": "storageModel",
+            "namespace": "fan1xia.model"
+        },
+        {
+            "file": "model\\storageModel.js",
+            "line": 78,
+            "description": "载入值",
+            "itemtype": "method",
+            "name": "getStorage",
+            "params": [
+                {
+                    "name": "key",
+                    "description": "要去得的键",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "获取成功返回兼职，失败返回false",
+                "type": "Bollean|String"
+            },
+            "class": "fan1xia.model.StorageModel.prototype",
+            "module": "storageModel",
+            "namespace": "fan1xia.model"
+        },
+        {
+            "file": "index.js",
+            "line": 23,
+            "description": "级别属性存储当前级别与系统级别的索引",
+            "itemtype": "property",
+            "name": "levels",
+            "type": "Array",
+            "default": "[]",
+            "class": "fan1xia.Index",
+            "module": "index",
+            "namespace": "fan1xia"
+        },
+        {
+            "file": "index.js",
+            "line": 38,
+            "description": "初始化",
+            "itemtype": "method",
+            "name": "init",
+            "class": "fan1xia.Index.prototype",
+            "module": "index",
+            "namespace": "fan1xia"
+        },
+        {
+            "file": "index.js",
+            "line": 65,
+            "description": "绑定点击事件",
+            "itemtype": "event",
+            "name": "bindClickEvent",
+            "class": "fan1xia.Index.prototype",
+            "module": "index",
+            "namespace": "fan1xia"
+        },
+        {
+            "file": "index.js",
+            "line": 116,
+            "description": "初始化",
+            "itemtype": "method",
+            "name": "init",
+            "class": "fan1xia.Success.prototype",
+            "module": "index",
+            "namespace": "fan1xia"
+        },
+        {
+            "file": "index.js",
+            "line": 124,
+            "description": "胜利处理结果",
+            "itemtype": "method",
+            "name": "success",
+            "class": "fan1xia.Success.prototype",
+            "module": "index",
+            "namespace": "fan1xia"
+        },
+        {
+            "file": "index.js",
+            "line": 192,
+            "description": "绑定点击事件",
+            "itemtype": "event",
+            "name": "bindClickEvent",
+            "class": "fan1xia.Success.prototype",
+            "module": "index",
+            "namespace": "fan1xia"
+        },
+        {
+            "file": "index.js",
+            "line": 254,
+            "description": "初始化",
+            "itemtype": "method",
+            "name": "init",
+            "class": "fan1xia.Failed.prototype",
+            "module": "index",
+            "namespace": "fan1xia"
+        },
+        {
+            "file": "index.js",
+            "line": 262,
+            "description": "失败处理结果",
+            "itemtype": "method",
+            "name": "fail",
+            "class": "fan1xia.Failed.prototype",
+            "module": "index",
+            "namespace": "fan1xia"
+        },
+        {
+            "file": "index.js",
+            "line": 278,
+            "description": "绑定点击事件",
+            "itemtype": "event",
+            "name": "bindClickEvent",
+            "class": "fan1xia.Failed.prototype",
+            "module": "index",
+            "namespace": "fan1xia"
+        }
+    ],
+    "warnings": [
+        {
+            "message": "unknown tag: version",
+            "line": " model\\canvasModel.js:1"
+        },
+        {
+            "message": "unknown tag: version",
+            "line": " model\\imagesModel.js:1"
+        },
+        {
+            "message": "unknown tag: version",
+            "line": " index.js:1"
+        }
+    ]
+}
