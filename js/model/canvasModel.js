@@ -1,4 +1,4 @@
-/** 
+/**
 * 画布对象
 *
 * @module canvasModel
@@ -27,7 +27,7 @@
 	     * @default null
 	     */
 		this.timer = null;
-		
+
 		/**
          * 分数对象
          * @property score
@@ -35,7 +35,7 @@
          * @default null
          */
 		this.score = null;
-		
+
 		/**
          * 存数对象
          * @property store
@@ -43,7 +43,7 @@
          * @default null
          */
 		this.store = null;
-		
+
 		/**
          * 图片对象
          * @property images
@@ -51,7 +51,7 @@
          * @default null
          */
 		this.images = null;
-		
+
 		/**
          * 声音对象
          * @property sound
@@ -60,7 +60,7 @@
          */
 		this.sound = new window.yan.Sound();
 	};
-	
+
 	/**
 	* Canvas构造函数的原型对象
 	* @class Canvas.prototype
@@ -69,25 +69,25 @@
 	Canvas.prototype = {
 		/**
 		 * 初始化
-		 * @method init 
+		 * @method init
 		 */
 		init:function(level, grad){
 		    var
 		        score = new Score(),
                 timer = new Timer(),
                 store = new Store();
-                
+
             this.score = score;
             this.timer = timer;
             this.store = store;
-			this.bindClickEvent();		
+			this.bindClickEvent();
 			this.images = new window.fan1xia.model.Images();
-			this.images.init();	
+			this.images.init();
 		},
-		
+
 		/**
 		 * 刷新画布元素
-		 * @method refresh 
+		 * @method refresh
 		 * @param {Number} level游戏的级别
 		 * @param {Number} grad 游戏单个图象重复的次数
 		 */
@@ -103,7 +103,7 @@
 			$table.yanVhSlideCenter(0, function(){
 				$table.yanVhSlideSide('slow');
 			});
-			
+
 			//清空元素
 			this.reset();
 			//加载imagesdom
@@ -112,21 +112,21 @@
 			this.createHtml(imgDoms, level);
 			//更新分数面板
 			score.reset(level);
-			
+
 			//更新时钟
 			timer.init((new Date()).getTime() + (level*level)*1000 + level*20*1000);
 			//更新储物箱
 			store.reset();
 		},
-		
+
 		/**
 		 * 构造html
 		 * @method createHtml
 		 * @param {Array} imgDoms 图象dom数组元素
-		 * @param {Number} level 级别 
+		 * @param {Number} level 级别
 		 */
 		createHtml:function(imgDoms, level){
-			var 
+			var
 				_$ = $,
 				$tbody = $('#canvas table tbody'),
 				len = imgDoms.length,
@@ -134,7 +134,7 @@
 				j = 0,
 				$tr = [],
 				$td = [];
-				
+
 			for(i; i<level; i++){
 				$tr[i] = _$('<tr></tr>');
 				for(j=0; j<level; j++){
@@ -142,125 +142,121 @@
 					$td[i*level + j].append(imgDoms[i*level + j]);
 					$tr[i].append($td[i*level + j]);
 				}
-				
+
 				$tbody.append($tr[i]);
-			}	
+			}
 		},
-		
+
 		/**
 		 * 初始化画布元素
-		 * @method initCanvas 
-		 * @param {Array} imgDoms 
+		 * @method initCanvas
+		 * @param {Array} imgDoms
 		 */
 		initCanvas:function(imgDoms){
 			var len = imgDoms.lenght;
 		},
 		/**
 		 * 重置画布
-		 * @method reset 
+		 * @method reset
 		 */
 		reset:function(){
-			var 
+			var
 			score = this.score,
 			timer = this.timer,
 			store = this.store;
-			
+
 			$('#canvas table tbody').empty();
 			score.reset();
 			timer.reset();
 			store.reset();
 		},
-		
+
 		/**
 		 * 绑定单击事件
-		 * @event bindClickEvent 
+		 * @event bindClickEvent
 		 */
 		bindClickEvent:function(){
-			var 
-				$goHome = $('#go-home'),
+			var
 				$table = $('#canvas table'),
 				that = this,
 				$preImg = null,
 				sound = this.sound,
 				score = this.score,
                 store = this.store,
+                tempCount = 0,
 				success = function(){},
 				failed = function(){},
 				first = function(){};
-			
+
 			//成功的事件
 			success = function($currentImg){
 				sound.play('./media/spread.wav');
-				$preImg.attr({src:'./images/background.gif', rel:''});
-				$currentImg.attr({src:'./images/background.gif', rel:''});
+				$preImg.attr({src:'./images/background.png', rel:''});
+				$currentImg.attr({src:'./images/background.png', rel:''});
 				//更新当前图象
 				$preImg = null;
+				tempCount = 0;
 				store.pull();
 				//更新已经消除次数
 				score.decreaseRemainNumber();
-			};	
-			
+			};
+
 			//失败的事件
 			failed = function($currentImg){
 				//翻到不相同图象
 				that.unclockRotate180($preImg, function(){});
 				that.unclockRotate180($currentImg, function(){});
-					
+
 				//更新当前图象
 				$preImg = null;
+				tempCount = 0;
 				sound.play('./media/Click.wav');
-				
+
 				//更新失败次数
 				score.addErrorCount();
-			};	
-			
+			};
+
 			//初次点击事件
 			first = function($currentImg){
 				//第一次开始翻
 				$preImg = $currentImg;
 			};
-			
-			//绑定图片的点击事件	
-			$table.delegate('img[rel!=""]:not(.front)', 'click', function(e){
-				var 
-					$this = $(this),
-					preSrc = $preImg !==null && $preImg.attr('rel'),
-					currentSrc = $this.attr('rel');
 
+			//绑定图片的点击事件
+			$table.delegate('img[rel!=""]:not(.front)', 'click', function(e){
+				var
+					$this,
+					preSrc,
+					currentSrc;
+
+                //点击速度太快了
+                if ( (tempCount += 1) >2) {
+                    return false;
+                }
+                $this = $(this);
+                preSrc = $preImg !==null && $preImg.attr('rel');
+                currentSrc = $this.attr('rel');
 				//更新点击次数
 				score.addClickCount();
-				
+                if ($preImg === null) {
+                    first($this);
+                }
+
 				that.clockRotate180($(this), function(){
 					//翻到相同图象
 					if(preSrc === currentSrc){
 						//消失
 						success($this);
-					}else if($preImg !==null){
+					}else if(preSrc !== false){
 						failed($this);
-					}else{
-						first($this);
 					}
-				});	
-				
-			});
-			
-			//绑定回到主菜单时间
-			$goHome.click(function(e){
-				that.reset();//重置画布
-				//旋转出元素
-				$('#wrap').rotate3Di(-90, 500, {complete:function(){
-					$(this).hide(0, function(){
-						$('#home').show(0, function(){
-							$(this).rotate3Di(90);
-							$('#home').rotate3Di(0, 1000, {complete:function(){}});
-						});
-					});
-				}});
+				});
+
 			});
 		},
-		
+
 		/**
-		 * 顺时针旋转180度元素 
+		 * 顺时针旋转180度元素
 		 * @method clockRotate180
 		 * @param {$object} $obj 旋转的元素
 		 * @param {function} callback 回调函数
@@ -272,23 +268,23 @@
 				$this.rotate3Di(0, 150, {complete:function(){callback();}});
 			}});
 		},
-		
+
 		/**
-		 * 逆时针时针旋转180度元素 
+		 * 逆时针时针旋转180度元素
 		 * @method unclockRotate180
 		 * @param {$object} $obj 旋转的元素
 		 * @param {function} callback 回调函数
 		 */
 		unclockRotate180:function($obj, callback){
-			$obj.delay(200).rotate3Di(-90, 150, {complete:function(){
+			$obj.delay(200).rotate3Di(-90, 100, {complete:function(){
 				var $this = $(this);
-				$this.removeClass('front').attr('src', './images/Shamrock.bmp').rotate3Di(90);
+				$this.removeClass('front').attr('src', './images/Shamrock.png').rotate3Di(90);
 				$this.rotate3Di(0, 150, {complete:function(){callback();}});
 			}});
 		}
 	};
-		
-	
+
+
 	/**
 	* 时间类
 	* @class Timer
@@ -296,7 +292,7 @@
 	* @extends fan1xia.model.Timer.prototype
 	*/
 	Timer = function(){};
-	
+
 	/**
 	* Timer构造函数的原型对象
 	* @class Timer.prototype
@@ -305,7 +301,7 @@
 	Timer.prototype = {
 		/**
 		 * 初始化
-		 * @method init 
+		 * @method init
 		 */
 		init:function(timestamp){
 			var that = this,
@@ -317,17 +313,17 @@
 			//先初始化
 			this.setTimer(timestamp, callback);
 		},
-		
+
 		/**
 		 * 复原计时器为零
-		 * @method reset 
+		 * @method reset
 		 */
 		reset:function(){
 			$('#time').countdown({reset:true});
 		},
-		
+
 		/**
-		 * 
+		 *
 		 * @method setTimer
 		 * @param {Number} stamp 时间戳
 		 * @param {Function} callback 回调函数
@@ -339,8 +335,8 @@
 			});
 		}
 	};
-		
-	
+
+
 	/**
 	* 存贮罐类
 	* @class Store
@@ -348,7 +344,7 @@
 	* @extends fan1xia.model.Store.prototype
 	*/
 	Store = function(){};
-	
+
 	/**
 	* Store构造函数的原型对象
 	* @class Store.prototype
@@ -357,34 +353,34 @@
 	Store.prototype = {
 		/**
 		 * 重置
-		 * @method reset 
+		 * @method reset
 		 * @param {String} src 路径
 		 */
 		reset:function(src){
 			src = src || './images/store.png';
 			this.src(src);
 		},
-		
+
 		/**
 		 * 放入东西
 		 * @method pull
-		 * @param {String} src 路径  
+		 * @param {String} src 路径
 		 */
 		pull:function(src){
 			src = src || './images/store-pull.png';
 			this.src(src);
 		},
-		
+
 		/**
 		 * 更改路径
-		 * @method src 
+		 * @method src
 		 * @param {String} src 路径
 		 */
 		src:function(src){
 			$('#result img').attr('src', src);
 		}
 	};
-	
+
 	/**
 	* 存贮罐类
 	* @class Score
@@ -399,7 +395,7 @@
          * @default 0
          */
 		this.totalPairs = 0;
-		
+
 		/**
          * 点击次数
          * @property clickCount
@@ -407,7 +403,7 @@
          * @default 0
          */
 		this.clickCount = 0;
-		
+
 		/**
          * 错误次数
          * @property errorCount
@@ -416,7 +412,7 @@
          */
 		this.errorCount = 0;
 	};
-	
+
 	/**
 	* Score构造函数的原型对象
 	* @class Score.prototype
@@ -439,7 +435,7 @@
 			this.setErrorCount();
 			this.setLevel(window.fan1xia.currentLevel+1);
 		},
-		
+
 		/**
 		 * 设置难度
 		 * @method setLevel
@@ -450,13 +446,13 @@
 		   var
                 $tds = $('#score-panel td');
             $tds.eq(9).html(level);
-            
-            return level;  
+
+            return level;
 		},
-		
+
 		/**
 		 * 设置总队数
-		 * @method setTotalNumber 
+		 * @method setTotalNumber
 		 * @param {Number} total 总队数
 		 * @return {Number} 总对数
 		 */
@@ -465,19 +461,19 @@
 				$tds = $('#score-panel td');
 			$tds.eq(1).html(total + '对');
 			this.totalPairs = total;
-			
+
 			return this.totalPairs;
 		},
-		
+
 		/**
          * 过去总对数
-         * @method getTotalNumber 
+         * @method getTotalNumber
          * @return {Number} 总队数
          */
 		getTotalNumber:function(){
 		    return this.totalPairs;
 		},
-		
+
 		/**
 		 * 设置还剩对少对
 		 * @method setRemainNumber
@@ -491,7 +487,7 @@
 		/**
 		 * 获取剩余对数
 		 * @method getRemainNumber
-		 * @return {Number} count 当前还剩余队数 
+		 * @return {Number} count 当前还剩余队数
 		 */
 		getRemainNumber:function(){
 			var
@@ -499,15 +495,15 @@
 			return parseInt($tds.eq(3).html(), 10);
 		},
 		/**
-		 * 剩余队数自减 
+		 * 剩余队数自减
 		 * @method decreaseRemainNumber
-		 * 
+		 *
 		 */
 		decreaseRemainNumber:function(){
 			var count = this.getRemainNumber(),
 				success = {},
 				canvas = window.fan1xia.canvas;
-			
+
 			this.setRemainNumber(count - 1);
 			if(this.checkSuccess(count - 1)){
 				//返回胜利界面
@@ -518,12 +514,12 @@
 		},
 		/**
 		 * 检查是否结束
-		 * @method checkSuccess 
+		 * @method checkSuccess
 		 * @param {Number} count 数量
 		 * @param {Bollean} success 是否成功
 		 */
 		checkSuccess:function(count){
-			return count === 0 ? true : false; 
+			return count === 0 ? true : false;
 		},
 		/**
 		 * 设置还剩对少对
@@ -541,9 +537,9 @@
 		/**
 		 * 获取点击次数
 		 * @method getClickCount
-		 * @return {Number} count 点击次数 
+		 * @return {Number} count 点击次数
 		 */
-		getClickCount:function(){			
+		getClickCount:function(){
 			return this.clickCount;
 		},
 		/**
@@ -569,12 +565,12 @@
 		/**
 		 * 获取错误次数
 		 * @method getErrorCount
-		 * @return {Number} count 错误次数 
+		 * @return {Number} count 错误次数
 		 */
 		getErrorCount:function(){
 			return this.errorCount;
 		},
-		
+
 		/**
 		 * 添加错误数
 		 * @method addErrorCount
@@ -583,8 +579,8 @@
 			this.setErrorCount(this.getErrorCount() + 1);
 		}
 	};
-	
-	
+
+
 	window.fan1xia = window.fan1xia || {};
 	window.fan1xia.model = window.fan1xia.model || {};
     window.fan1xia.model.Canvas = Canvas;

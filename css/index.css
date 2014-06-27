@@ -2,21 +2,13 @@
 /**
  * 	index 页面的css
  */
-html,body{	
+html,body{
 	width:100%;
 	height:100%;
 	min-width:800px;
-	min-height:600px;
-	background:#1396ce;
-	background:-webkit-gradient(linear,0% 0%, 0% 100%, from(#0037ac), to(#0037ac), color-stop(0.3, #5096f6), color-stop(0.5,#1396ce), color-stop(0.7, #5096f6));
-	background:-moz-linear-gradient(#0037ac, #5096f6 30%, #1396ce 50%, #5096f6 70%, #0037ac);
-	background:linear-gradient(#0037ac, #5096f6 30%, #1396ce 50%, #5096f6 70%, #0037ac);
-}
-.share-qzone{
-	width:121px;
-	height:26px;
-	display: inline-block;
-	background: url("../images/intro.gif")
+	min-height:850px;
+	font-family:微软雅黑;
+	background:#353535;
 }
 /**
  * 	载入区域
@@ -49,11 +41,12 @@ html,body{
 #failed{
 	text-align: center
 }
-#failed p{
-	color:#fff;
-	font-size: 48px;
-	text-align:center;
-	padding: 150px
+#failed h2{
+    margin-bottom: 300px;
+    padding-top: 30px;
+    color:#580000;
+    font-size: 61px;
+    line-height: 1.5em;
 }
 /**
  * 	外边的包裹
@@ -63,9 +56,8 @@ html,body{
 	width:1020px;
 	height:100%;
 	margin:auto;
-	background: -webkit-gradient(linear,0% 0%, 0% 100%, from(#9d5e70), to(#cd9191));
-	background:-moz-linear-gradient(#9d5e70,#cd9191);
-	background:linear-gradient(#9d5e70, #cd9191);
+	background:#8ae0d1 url(../images/bg.png) no-repeat 50% 50%;
+	background-size:100% 100%;
 	display:none;
 	overflow:hidden;
 }
@@ -74,39 +66,38 @@ html,body{
  * =============================================
  */
 #success{
-	background: url(../images/success-bg.gif);
 	text-align: center
 }
-#success h1{
+#success h2{
 	padding-top: 30px;
-	color:#FFFFFF;
-	font-size: 72px;
-	font-weight: bolder;
+	color:#580000;
+	font-size: 61px;
 	line-height: 1.5em;
-	text-shadow: 3px 3px 20px #E7DFAE;
 }
 .try-again,.go-home{
 	border: 0;
-	color:#2D1C08;
-	font-size: 32px;
-	line-height: 1.5em;
-	padding:10px 20px;
-	font-style: italic;
-	background: #E7DFAE;
-	border-radius: 10px;
+	width:176px;
+	height:68px;
+	color:#821200;
+	font-size: 24px;
+	line-height: 68px;
+	background: url(../images/success-btn.png);
 	cursor: pointer;
-	text-shadow: 3px 3px 20px #2D1C08;
-	box-shadow: 0px 0px 20px #E7DFAE
 }
 #success ul{
-	margin-bottom:50px
+	margin:0 auto 50px;
+	padding: 1px;
+	width:300px;
+	background:rgba(188,231,201, 0.5);
 }
 #success ul li{
-	color: #FFFFFF;
+    margin:40px 0;
+    font-size:24px;
+    line-height: 1.5;
+	color: #580000;
 }
 #success ul li strong{
-	font-size: 32px;
-	color: #E7DFAE
+	color: #cc0000
 }
 #share-qzone-success{
 	margin:20px
@@ -117,38 +108,79 @@ html,body{
  */
 #home{
 	display:block;
-	background:-webkit-gradient(linear,0% 0%, 0% 100%, from(#180002), to(#180002), color-stop(0.5, #aa5709));
-	background:-moz-linear-gradient(#180002, #aa5709 50%, #180002);
-	background:linear-gradient(#180002, #aa5709 50%, #180002);
 	color:#fff;
 	font-size:40px;
 	font-weight:bold;
 	text-align:center
 }
+#home h1{
+    margin:auto;
+    width:383px;
+    height:254px;
+    text-indent: -9999px;
+    background:url(../images/h1.png);
+}
 #home ul{
-	margin:100px 50px
+	margin:100px auto;
+	width:556px;
+	overflow:hidden;
 }
 #home li{
 	float:left;
-	margin:30px 50px
+	margin:12px 15px
 }
 #home button{
-	background:#c0eb78;
-	width:80px;
-	height:80px;
+    border:0;
+	width:81px;
+	height:81px;
 	border-radius:10px;
-	color:#eeeaeb;
-	font-size:36px;
-	font-weight:bolder;
-	-moz-box-shadow:0px 0px 20px #e2d1ec; 
-	-webkit-box-shadow:0px 0px 20px #e2d1ec; 
-	box-shadow:0px 0px 20px #e2d1ec;
 	cursor:pointer;
-	-webkit-text-stroke: 1.0px #000000;
-	text-shadow:2px 2px 5px #333333;
+	text-indent:-9999px;
+	background:url(../images/home-button.png);
+}
+#home button.b2{
+    background-position:-110px 0;
+}
+#home button.b3{
+    background-position:-221px 0;
+}
+#home button.b4{
+    background-position:-332px 0;
+}
+#home button.b5{
+    background-position:-443px 0;
+}
+#home button.b6{
+    background-position:0 -104px;
+}
+#home button.b7{
+    background-position:-110px -104px;
+}
+#home button.b8{
+    background-position:-221px -104px;
+}
+#home button.b9{
+    background-position:-332px -104px;
+}
+#home button.b10{
+    background-position:-443px -104px;
 }
 #home button.click{
-	background:#c0eb00;
+	-moz-box-shadow:0px 0px 20px #e2d1ec;
+    -webkit-box-shadow:0px 0px 20px #e2d1ec;
+    box-shadow:0px 0px 20px #e2d1ec;
+}
+#wrap h2{
+    margin:10px auto;
+    width:591px;
+    height:171px;
+    background:url(../images/wrap-h1.png);
+    text-indent:-9999px;
+}
+#wrap footer{
+    height:47px;
+    background:url(../images/footer.png);
+    clear:both;
 }
 /**
  * 	#time-wrap
@@ -156,22 +188,18 @@ html,body{
  */
 #time-wrap{
 	float:left;
-	width:250px
+	width:230px
 }
 /**
  * 	时间控件的css
  * -----------------------------
  */
 #time{
-	width:auto;
-	margin: 100px 20px 0 20px;
-	background:-webkit-gradient(linear,0% 0%, 0% 100%, from(#a9adb0), to(#a7abae), color-stop(0.5, #cbd0d3));
-	border:#e2d1ec 3px solid;
-	border-radius:5px;
-	padding:20px 0 0;
-	-moz-box-shadow:0px 0px 20px #e2d1ec; 
-	-webkit-box-shadow:0px 0px 20px #e2d1ec; 
-	box-shadow:0px 0px 20px #e2d1ec;
+    margin: 100px auto 0;
+    padding-top:50px;
+	width:170px;
+	height:75px;
+	background:url(../images/time.png) no-repeat;
 	opacity:0.8
 }
 #time:hover{
@@ -181,35 +209,35 @@ html,body{
  * 	result css
  */
 #result{
-	margin: 100px auto 0;
+	margin: 240px auto -50px;
 	text-align:center;
 	opacity:0.6
 }
 #result:hover{
 	opacity:0.9
 }
-#result img{
-}
 /**
  * 	画布元素
  * ==============================================
  */
+
 #canvas{
-	background:#3125af;
 	padding:20px;
-	-moz-box-shadow:0px 0px 20px #4a48eb; 
-	-webkit-box-shadow:0px 0px 20px #4a48eb; 
-	box-shadow:0px 0px 20px #4a48eb;
+	-moz-box-shadow:5px 5px 0px #75bfb2;
+	-webkit-box-shadow:5px 5px 0px #75bfb2;
+	box-shadow:5px 5px 0px #75bfb2;
 	border-radius: 5px;
 	margin:10px 0;
 	float:left;
 	width:552px;
 	height:552px;
+	background:url(../images/canvas.png) no-repeat 50% 50%;
+	background-size:100% 100%;
 }
 #canvas img{
-	background:url(../images/background.gif);
 	border-radius: 5px;
 	width:65px;
+	height:65px;
 	cursor: pointer
 }
 #canvas img.front{
@@ -220,7 +248,6 @@ html,body{
 }
 #canvas table td{
 	padding:1px 2px;
-	-moz-box-shadow:0px 0px 20px #3D30E2; -webkit-box-shadow:0px 0px 20px #3D30E2; box-shadow:0px 0px 20px #3D30E2;
 }
 /**
  * 	wall-warp css
@@ -231,18 +258,13 @@ html,body{
 	margin-left:20px
 }
 #score-panel{
-	width:135px;
-	background:#495647;
-	border:5px #c9b6cc solid;
-	margin-top:50px;
-	-moz-box-shadow:0px 0px 20px #e2d1ec; 
-	-webkit-box-shadow:0px 0px 20px #e2d1ec; 
-	box-shadow:0px 0px 20px #e2d1ec;
-	border-radius:5px;
-	color:#bdc3bd;
+    padding-top:20px;
+	width:174px;
+	height:228px;
+	background:url(../images/score.png);
+	color:#4d4d4d;
 	font-weight:bold;
-	font-size:24px;
-	opacity:0.8
+	font-size:20px;
 }
 #score-panel:hover{
 	opacity:1
@@ -254,28 +276,22 @@ html,body{
 #score-panel table tr{
 	margin:10px 0
 }
-#help{
+#share{
 	margin-top:50px;
 }
-#help img{
-	display:block;
-	opacity:0.6
+#share li{
+    margin:10px;
 }
-#help img:hover{
-	opacity:0.9
+.weibo, .qzone, .weixin{
+    display:block;
+    width:142px;
+    height:45px;
+    text-indent:-9999px;
+    background:url(../images/share.png);
 }
-#go-home{
-	background:url(../images/home-btn.png);
-	border:0;
-	height:65px;
-	width:130px;
-	margin-top:30px;
-	cursor:pointer;
-	opacity:0.6
+.qzone{
+    background-position:0 -54px;
 }
-#go-home:hover{
-	opacity:0.9
-}
-#wall-warp img{
-	width:120px
+.weixin{
+    background-position:0 -107px;
 }
