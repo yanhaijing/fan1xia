@@ -282,8 +282,11 @@ html,body{
 #share li{
     margin:10px;
 }
+.share{
+    margin:0 0 20px;
+}
 .weibo, .qzone, .weixin{
-    display:block;
+    display:inline-block;
     width:142px;
     height:45px;
     text-indent:-9999px;
