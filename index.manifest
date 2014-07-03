@@ -92,9 +92,12 @@ images/success-btn.png
 images/time.png
 images/background.png
 images/bg.png
+images/xoyo.png
+images/xoyo-weixin.jpg
+images/xsj.png
+images/xsj-weixin.jpg
 
 #network
 NETWORK:
 
-js/share.js
 *

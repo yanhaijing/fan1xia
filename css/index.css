@@ -7,8 +7,13 @@ html,body{
 	height:100%;
 	min-width:800px;
 	min-height:850px;
-	font-family:微软雅黑;
-	background:#353535;
+	font-family:Microsoft Yahei,tahoma,sans-serif;
+	background:#666;
+}
+.header{
+    margin:auto;
+    width:1020px;
+    background:#333;
 }
 /**
  * 	载入区域
@@ -42,7 +47,7 @@ html,body{
 	text-align: center
 }
 #failed h2{
-    margin-bottom: 300px;
+    margin-bottom: 200px;
     padding-top: 30px;
     color:#580000;
     font-size: 61px;
@@ -91,7 +96,7 @@ html,body{
 	background:rgba(188,231,201, 0.5);
 }
 #success ul li{
-    margin:40px 0;
+    margin:20px 0;
     font-size:24px;
     line-height: 1.5;
 	color: #580000;
@@ -285,7 +290,7 @@ html,body{
 .share{
     margin:0 0 20px;
 }
-.weibo, .qzone, .weixin{
+.weibo, .qzone{
     display:inline-block;
     width:142px;
     height:45px;
@@ -296,5 +301,15 @@ html,body{
     background-position:0 -54px;
 }
 .weixin{
-    background-position:0 -107px;
+    margin:0 auto 20px;
+    width:302px;
+    overflow:hidden;
+    zoom:1;
+}
+.weixin .figure{
+    float:left;
+    margin:0 10px;
+}
+.weixin .figcaption{
+    line-height:1.5;
 }
