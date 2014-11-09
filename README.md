@@ -2,7 +2,7 @@
   <img src="./images/fan.gif" width="100px">
 </a>
 
-#[Fan1xia](https://github.com/yanhaijing/fan1xia)
+#[Fan1xia](https://github.com/yanhaijing/fan1xia) [![license](http://img.shields.io/npm/l/express.svg)](https://github.com/yanhaijing/fan1xia/blob/master/MIT-LICENSE.txt)
 
 fan1xia is a game like window 7's little games work on chrome/firefox/opera/ie10+ 
 
