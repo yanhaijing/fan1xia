@@ -2,11 +2,11 @@
   <img src="./images/fan.gif" width="100px">
 </a>
 
-#[Fan1xia](https://github.com/yanhaijing/fan1xia) [![license](http://img.shields.io/npm/l/express.svg)](https://github.com/yanhaijing/fan1xia/blob/master/MIT-LICENSE.txt)
+# [Fan1xia](https://github.com/yanhaijing/fan1xia) [![license](http://img.shields.io/npm/l/express.svg)](https://github.com/yanhaijing/fan1xia/blob/master/MIT-LICENSE.txt)
 
 fan1xia is a game like window 7's little games work on chrome/firefox/opera/ie10+ 
 
-##Platform
+## Platform
 
 * firefox
 * chrome
@@ -14,22 +14,22 @@ fan1xia is a game like window 7's little games work on chrome/firefox/opera/ie10
 * safira
 * ie8+
 
-##Demo
+## Demo
 
 [http://yanhaijing.github.com/fan1xia](http://yanhaijing.github.com/fan1xia)
 
-##Issues
+## Issues
 
 [Report a Problem](https://github.com/yanhaijing/fan1xia/issues)
 
-##Authors
+## Authors
 
 **yanhaijing**
 
 - [Twitter](http://t.qq.com/yanhaijing1234 "yanhaijing's Twitter")
 - [Email](http://yanhaijing1234@gmail.com "yanhaijing's Email")
 
-##Copyright and license
+## Copyright and license
 
 Copyright © 2013 yanhaijing. All Rights Reserved
 
